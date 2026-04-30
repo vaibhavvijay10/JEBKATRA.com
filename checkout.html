@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout — JEBKATRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      "primary": "#af101a", "on-primary": "#ffffff",
+      "surface": "#f9f7f2", "surface-container": "#f0edec", "surface-container-low": "#f6f3f2",
+      "surface-container-highest": "#e3e0df", "on-surface": "#0d0d0d", "on-surface-variant": "#41484b",
+      "inverse-surface": "#1a1a1a", "secondary": "#5f5e5e",
+      "outline": "#8f6f6c", "outline-variant": "#d6cfce",
+    },
+    fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+    borderRadius: {"DEFAULT":"0","sm":"0","md":"0","lg":"0","xl":"0","full":"9999px"},
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid #af101a; outline-offset: -2px; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- NAVBAR -->
+<header class="w-full bg-[#f9f7f2] border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-[#af101a] hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Home</a>
+      <a href="shop.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">All Products</a>
+      <a href="about.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-[#af101a] text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="pt-16 pb-16 px-8 md:px-16 border-b border-outline-variant/20">
+  <p class="font-body text-xs uppercase tracking-[0.3em] text-secondary mb-3">Almost There</p>
+  <h1 class="font-headline text-5xl md:text-6xl text-primary italic">Checkout</h1>
+  <p class="font-body text-sm text-on-surface-variant mt-2">Your money is almost ours. So close.</p>
+</div>
+
+<!-- CHECKOUT LAYOUT -->
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 py-16 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16 items-start">
+
+  <!-- FORM -->
+  <div>
+    <!-- SHIPPING -->
+    <h2 class="font-headline text-2xl text-primary mb-2">Shipping Details</h2>
+    <p class="font-body text-xs text-outline uppercase tracking-widest mb-8">We will ship to this address. Or we won't. Depends on Vaibhav Ji's mood.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">First Name</label>
+        <input id="fname" type="text" placeholder="e.g. Vikram" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+      <div>
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Last Name</label>
+        <input type="text" placeholder="e.g. Jebwala" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+    </div>
+    <div class="mb-6">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Email Address</label>
+      <input type="email" id="email" placeholder="We will spam this address forever" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+    </div>
+    <div class="mb-6">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Phone Number</label>
+      <input type="tel" placeholder="For unsolicited calls from our 'team'" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+    </div>
+    <div class="mb-6">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Address</label>
+      <input type="text" placeholder="House no., Street, Colony" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40 mb-3"/>
+      <input type="text" placeholder="Near the place everyone knows but can't explain" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+      <div class="sm:col-span-2">
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">City</label>
+        <input type="text" placeholder="City" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+      <div>
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">PIN Code</label>
+        <input type="text" placeholder="6-digit" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+    </div>
+    <div class="mb-6">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">State</label>
+      <select class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm text-on-surface-variant">
+        <option>Select State</option>
+        <option>Maharashtra (Most Jeb-Kataai)</option>
+        <option>Delhi (Premium Looting Zone)</option>
+        <option>Karnataka (Tech-Enabled Regret)</option>
+        <option>Tamil Nadu (Classical Disappointment)</option>
+        <option>West Bengal (Philosophical Purchase)</option>
+        <option>Gujarat (Business-Minded Regret)</option>
+        <option>Rajasthan (Desert of Bad Decisions)</option>
+        <option>Other (All equally valid)</option>
+      </select>
+    </div>
+    <div class="mb-10">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Delivery Instructions</label>
+      <textarea rows="3" placeholder="e.g. 'Leave at door', 'Please don't actually deliver this, I made a mistake'" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40 resize-none"></textarea>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="border-t border-outline-variant/20 my-10"></div>
+
+    <!-- PAYMENT -->
+    <h2 class="font-headline text-2xl text-primary mb-2">Payment Details</h2>
+    <p class="font-body text-xs text-outline uppercase tracking-widest mb-6">Complete your looting below.</p>
+
+    <div class="bg-amber-50 border border-amber-200 px-5 py-4 mb-8">
+      <p class="font-body text-xs text-amber-700 leading-relaxed">🔒 <strong>Important:</strong> This is a parody website. Do not enter real card details. Your payment information is safe because we are not actually processing anything. We are just pretending. Very convincingly.</p>
+    </div>
+
+    <div class="mb-6">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Card Number</label>
+      <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40 tracking-widest"/>
+    </div>
+    <div class="grid grid-cols-2 gap-6 mb-6">
+      <div>
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Expiry</label>
+        <input type="text" placeholder="MM / YY" maxlength="7" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+      <div>
+        <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">CVV</label>
+        <input type="text" placeholder="3 digits of trust" maxlength="3" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+      </div>
+    </div>
+    <div class="mb-8">
+      <label class="block font-body text-[10px] uppercase tracking-widest text-outline mb-2">Name on Card</label>
+      <input type="text" placeholder="As it appears on card" class="w-full border border-outline-variant/40 bg-white px-4 py-3 font-body text-sm placeholder:text-outline/40"/>
+    </div>
+
+    <label class="flex items-start gap-4 cursor-pointer mb-8">
+      <input type="checkbox" id="agree" class="mt-1 accent-[#af101a] w-4 h-4 flex-shrink-0"/>
+      <span class="font-body text-xs text-on-surface-variant leading-relaxed">I agree that my jeb is now JEBKATRA's jeb. I have read the Terms &amp; Conditions (I have not). I accept there are no refunds under any circumstances, including fraud, natural disasters, and moral awakening.</span>
+    </label>
+
+    <button onclick="placeOrder()" class="w-full bg-primary text-white py-5 font-body font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex items-center justify-between px-8 group">
+      <span>Confirm Looting — Place Order</span>
+      <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </button>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="bg-surface-container-low border border-outline-variant/20 p-8 sticky top-8">
+    <h3 class="font-headline text-xl text-primary mb-6">Your Order</h3>
+    <div id="checkout-items"></div>
+    <div id="checkout-fees"></div>
+    <p class="font-body text-[10px] text-outline/60 italic mt-6 leading-relaxed">📦 Estimated delivery: 4–6 weeks, or when the stars align, or never. Whichever comes first.</p>
+  </div>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+<div id="success-modal" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center p-4">
+  <div class="bg-white max-w-md w-full p-12 text-center">
+    <div class="font-body text-6xl mb-6">🙏</div>
+    <h2 class="font-headline text-3xl text-primary mb-4" id="modal-title">Shukriya!</h2>
+    <p class="font-body text-sm text-on-surface-variant leading-relaxed mb-4">
+      Aapki jeb kaat li gayi.<br/><br/>
+      Your order has been placed. Vaibhav Ji has been informed. He said <em>"haan haan"</em> and went back to sleep. We consider this a confirmation.
+    </p>
+    <p class="font-body text-[10px] uppercase tracking-widest text-outline mb-8" id="order-id-text">Order ID: JBK-XXXXXXXX</p>
+    <p class="font-body text-xs text-outline/60 leading-relaxed mb-8">A confirmation email has been sent to the address you provided. We have also sent it to ourselves, your neighbours, and a random number from Jaipur.</p>
+    <a href="index.html" onclick="clearAndGo(event)" class="inline-block bg-primary text-white px-10 py-4 font-body font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity">Return to Homepage</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] py-16 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-8">
+    <a href="index.html" class="font-serif italic font-black text-[#af101a] text-4xl tracking-tight">JEBKATRA</a>
+    <div class="flex gap-10 font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <a href="shop.html" class="hover:text-white/70 transition-colors">All Products</a>
+      <a href="about.html" class="hover:text-white/70 transition-colors">Our Story</a>
+      <a href="cart.html" class="hover:text-white/70 transition-colors">Cart</a>
+    </div>
+    <p class="font-sans text-[9px] uppercase tracking-[0.2em] text-white/20 text-center">© 2024 JEBKATRA. Apki jeb se humare jeb tak.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('card-number').addEventListener('input', function(e) {
+    let v = e.target.value.replace(/\D/g, '').substring(0, 16);
+    e.target.value = v.replace(/(.{4})/g, '$1 ').trim();
+  });
+
+  function renderCheckoutSummary() {
+    const cart = getCart();
+    const itemsEl = document.getElementById('checkout-items');
+    const feesEl = document.getElementById('checkout-fees');
+
+    if (cart.length === 0) {
+      itemsEl.innerHTML = `<p class="font-body text-xs text-outline italic">Your cart is empty. <a href="shop.html" class="underline text-primary">Go loot something.</a></p>`;
+      return;
+    }
+
+    itemsEl.innerHTML = cart.map(item => `
+      <div class="flex items-center gap-4 mb-5 pb-5 border-b border-outline-variant/20">
+        <div class="w-14 h-16 flex-shrink-0 bg-surface-container overflow-hidden">
+          <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover grayscale"/>
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="font-body text-xs font-bold text-on-surface leading-tight">${item.name}</p>
+          <p class="font-body text-[10px] text-outline mt-0.5">Qty: ${item.qty}</p>
+        </div>
+        <span class="font-body text-sm font-bold text-primary whitespace-nowrap">${formatPrice(item.price * item.qty)}</span>
+      </div>`).join('');
+
+    const subtotal = getCartTotal();
+    const artisanFee = Math.round(subtotal * 0.15);
+    const storyFee = 999;
+    const jebTax = Math.round((subtotal + artisanFee + storyFee) * 0.18);
+    const confidenceFee = 500;
+    const total = subtotal + artisanFee + storyFee + jebTax + confidenceFee;
+    localStorage.setItem('jebkatra_total', total);
+
+    feesEl.innerHTML = `
+      <div class="space-y-2 border-t border-outline-variant/20 pt-4 mt-2">
+        <div class="flex justify-between font-body text-xs text-on-surface-variant"><span>Subtotal</span><span>${formatPrice(subtotal)}</span></div>
+        <div class="flex justify-between font-body text-xs text-red-400 italic"><span>Artisan Handling (15%)</span><span>${formatPrice(artisanFee)}</span></div>
+        <div class="flex justify-between font-body text-xs text-red-400 italic"><span>Story Verification</span><span>${formatPrice(storyFee)}</span></div>
+        <div class="flex justify-between font-body text-xs text-red-400 italic"><span>Jeb Kataai Tax</span><span>${formatPrice(jebTax)}</span></div>
+        <div class="flex justify-between font-body text-xs text-red-400 italic"><span>Confidence Fee</span><span>${formatPrice(confidenceFee)}</span></div>
+        <div class="flex justify-between font-headline text-base font-bold text-primary border-t border-outline-variant/20 pt-3 mt-2">
+          <span>Total</span><span>${formatPrice(total)}</span>
+        </div>
+      </div>`;
+  }
+
+  function placeOrder() {
+    if (!document.getElementById('agree').checked) {
+      showToast('⚠️ Please agree that your jeb is ours first.');
+      return;
+    }
+    const fname = document.getElementById('fname').value.trim() || 'Valued Customer';
+    const orderId = 'JBK-' + Math.random().toString(36).substring(2, 10).toUpperCase();
+    document.getElementById('modal-title').textContent = 'Shukriya, ' + fname + ' ji!';
+    document.getElementById('order-id-text').textContent = 'Order ID: ' + orderId;
+    const modal = document.getElementById('success-modal');
+    modal.style.display = 'flex';
+  }
+
+  function clearAndGo(e) {
+    e.preventDefault();
+    localStorage.removeItem('jebkatra_cart');
+    window.location.href = 'index.html';
+  }
+
+  renderCheckoutSummary();
+</script>
+</body>
+</html>

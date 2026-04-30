@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Our Story — JEBKATRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      "primary": "#af101a", "primary-container": "#d32f2f", "on-primary": "#ffffff",
+      "surface": "#fcf9f8", "surface-container": "#f0edec", "surface-container-low": "#f6f3f2",
+      "surface-container-highest": "#e5e2e1", "on-surface": "#1c1b1b",
+      "inverse-surface": "#313030", "secondary": "#5f5e5e", "outline": "#8f6f6c",
+      "on-primary-container": "#fff2f0",
+    },
+    fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+    borderRadius: {"DEFAULT":"0","sm":"0","md":"0","lg":"0","xl":"0","full":"9999px"},
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; background:#fcf9f8; color:#1c1b1b; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee-track { animation: marquee 24s linear infinite; display:flex; white-space:nowrap; }
+</style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+
+<!-- NAVBAR -->
+<header class="w-full bg-[#f9f7f2] border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-[#af101a] hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Home</a>
+      <a href="shop.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">All Products</a>
+      <a href="about.html" class="text-[#af101a] border-b-2 border-[#af101a] pb-0.5">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-[#af101a] text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO SPLIT -->
+<section class="grid grid-cols-1 md:grid-cols-2 min-h-screen">
+  <!-- LEFT: TEXT -->
+  <div class="flex flex-col justify-center px-12 md:px-20 py-28 bg-inverse-surface text-white">
+    <span class="font-body text-[10px] uppercase tracking-[0.4em] text-white/40 mb-10">Origins · 2019</span>
+    <h1 class="font-headline text-5xl md:text-7xl font-black leading-[0.9] tracking-tighter uppercase mb-12">
+      I Was<br/>Kicked Out<br/>of EKATRA.<br/>
+      <span class="text-primary italic">Built<br/>JEBKATRA.</span>
+    </h1>
+    <div class="w-16 h-px bg-white/20 mb-8"></div>
+    <p class="font-body text-sm font-light text-white/60 leading-relaxed max-w-sm uppercase tracking-wide">
+      "They said I was too committed to consumption. I said thank you."<br/><br/>— Vaibhav Vijay, Founder & Chief Pocket Cutter
+    </p>
+  </div>
+  <!-- RIGHT: IMAGE -->
+  <div class="relative min-h-[60vh] md:min-h-screen overflow-hidden bg-surface-container">
+    <img id="founder-story-img" alt="The Founder" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 absolute inset-0"/>
+    <div class="absolute bottom-8 left-8 bg-primary text-white px-4 py-2 font-body text-[10px] uppercase tracking-[0.2em]">Est. Post-Betrayal</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="w-full bg-primary-container text-on-primary-container py-4 overflow-hidden">
+  <div class="marquee-track items-center gap-20">
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Profit Over People</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Non-Biodegradable is Forever</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Apki Jeb Se Humare Jeb Tak</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Profit Over People</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Non-Biodegradable is Forever</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Apki Jeb Se Humare Jeb Tak</p>
+    <span class="w-2 h-2 rounded-full bg-white/40 flex-shrink-0 mx-4"></span>
+  </div>
+</section>
+
+<!-- THE BITTER TRUTH -->
+<section class="py-32 px-12 md:px-24 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+  <div class="space-y-8">
+    <span class="font-body text-xs font-black uppercase tracking-[0.3em] text-primary">The Bitter Truth</span>
+    <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-tight">
+      Sustainability is for people who haven't seen our prices.
+    </h2>
+    <p class="font-body text-sm text-secondary leading-relaxed">
+      In 2019, Vaibhav was unceremoniously removed from EKATRA's artisan collective for proposing a line of single-use luxury items made from unrecyclable polymers. They called it irresponsible. He called it visionary. He left. He wept. He found plastic in his pocket and thought: <em>this is it</em>.
+    </p>
+    <p class="font-body text-sm text-secondary leading-relaxed">
+      JEBKATRA was incorporated three weeks later in a Pune flat with one laptop, zero ethics certifications, and a deep personal commitment to making objects no one asked for.
+    </p>
+  </div>
+  <div class="bg-inverse-surface p-12 space-y-6">
+    <span class="font-body text-[10px] uppercase tracking-[0.3em] text-white/40">The Founding Philosophy</span>
+    <blockquote class="font-headline italic text-3xl md:text-4xl text-white leading-tight">
+      "Some things shouldn't be sustainable. Some things are meant to be consumed, discarded, and eternally memorialized in the soil of our planet."
+    </blockquote>
+    <div class="w-12 h-px bg-primary mt-6"></div>
+    <p class="font-body text-xs uppercase tracking-widest text-white/40">Vaibhav Vijay, Founder's Address, 2019</p>
+  </div>
+</section>
+
+<!-- EKATRA vs JEBKATRA COMPARISON -->
+<section class="py-24 bg-surface-container px-12 md:px-24">
+  <div class="max-w-[1200px] mx-auto">
+    <h2 class="font-headline text-5xl md:text-6xl font-black tracking-tighter uppercase mb-4">The Divergence</h2>
+    <p class="font-body text-xs uppercase tracking-widest text-secondary mb-16">Why we had to exist. Why they had to lose us.</p>
+
+    <!-- Bento Grid -->
+    <div class="grid grid-cols-3 gap-px bg-surface-container-highest text-sm font-body">
+      <!-- Header row -->
+      <div class="bg-surface-container p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-secondary">Category</span>
+      </div>
+      <div class="bg-inverse-surface p-8">
+        <span class="font-headline italic text-2xl text-white font-black uppercase">EKATRA</span>
+        <p class="font-body text-[10px] uppercase tracking-widest text-white/40 mt-1">The Betrayers</p>
+      </div>
+      <div class="bg-primary p-8">
+        <span class="font-headline italic text-2xl text-white font-black uppercase">JEBKATRA</span>
+        <p class="font-body text-[10px] uppercase tracking-widest text-white/60 mt-1">The Visionaries</p>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="bg-surface p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-primary font-black">Philosophy</span>
+        <p class="font-body text-xs text-secondary mt-2 uppercase tracking-wide leading-relaxed">What guides every decision</p>
+      </div>
+      <div class="bg-surface-container-low p-8">
+        <p class="font-body text-sm leading-relaxed">Artisan dignity, fair wages, sustainable sourcing, ethical production chains, community upliftment.</p>
+      </div>
+      <div class="bg-surface p-8">
+        <p class="font-body text-sm leading-relaxed font-bold">Apki jeb se humare jeb tak. Full stop. No community upliftment on the premises.</p>
+      </div>
+
+      <!-- Materials -->
+      <div class="bg-surface-container-low p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-primary font-black">Materials</span>
+        <p class="font-body text-xs text-secondary mt-2 uppercase tracking-wide leading-relaxed">What goes into the product</p>
+      </div>
+      <div class="bg-surface p-8">
+        <p class="font-body text-sm leading-relaxed">Natural fibres, recycled textiles, organic dyes, minimal packaging, zero microplastics.</p>
+      </div>
+      <div class="bg-inverse-surface p-8">
+        <p class="font-body text-sm text-white leading-relaxed font-bold">100% Virgin Plastic. If it can survive a nuclear winter, it belongs in our catalogue.</p>
+      </div>
+
+      <!-- Legacy -->
+      <div class="bg-surface p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-primary font-black">Legacy</span>
+        <p class="font-body text-xs text-secondary mt-2 uppercase tracking-wide leading-relaxed">What we leave behind</p>
+      </div>
+      <div class="bg-surface-container-low p-8">
+        <p class="font-body text-sm leading-relaxed">A healthier planet, empowered artisans, lower carbon footprints, conscious consumerism.</p>
+      </div>
+      <div class="bg-surface p-8">
+        <p class="font-body text-sm leading-relaxed font-bold">Permanent microplastic enrichment of all major Indian river systems. We call it heritage.</p>
+      </div>
+
+      <!-- Pricing -->
+      <div class="bg-surface-container-low p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-primary font-black">Pricing</span>
+        <p class="font-body text-xs text-secondary mt-2 uppercase tracking-wide leading-relaxed">What it costs to participate</p>
+      </div>
+      <div class="bg-surface p-8">
+        <p class="font-body text-sm leading-relaxed">Fair market pricing that reflects true artisan labour and sustainable sourcing costs.</p>
+      </div>
+      <div class="bg-primary p-8">
+        <p class="font-body text-sm text-white leading-relaxed font-bold">₹9,999 for a used sock. Plus Artisan Handling, Story Verification, Jeb Kataai Tax, and a Confidence Fee.</p>
+      </div>
+
+      <!-- Customer Support -->
+      <div class="bg-surface p-8">
+        <span class="font-body text-[10px] uppercase tracking-[0.2em] text-primary font-black">Customer Support</span>
+        <p class="font-body text-xs text-secondary mt-2 uppercase tracking-wide leading-relaxed">What happens after purchase</p>
+      </div>
+      <div class="bg-surface-container-low p-8">
+        <p class="font-body text-sm leading-relaxed">Dedicated team, easy returns, full refunds for quality issues, ongoing relationship.</p>
+      </div>
+      <div class="bg-inverse-surface p-8">
+        <p class="font-body text-sm text-white leading-relaxed font-bold">No returns. Ever. Support emails go directly to Vaibhav Vijay's junk folder. Unread. Forever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY UNSUSTAINABLE -->
+<section class="py-32 px-12 md:px-24 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+  <div class="relative overflow-hidden aspect-[4/3] bg-surface-container">
+    <img id="plastic-float-img" alt="Why Unsustainable" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/40 to-transparent pointer-events-none"></div>
+  </div>
+  <div class="space-y-8">
+    <span class="font-body text-xs font-black uppercase tracking-[0.3em] text-primary">The Question Everyone Asks</span>
+    <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tighter leading-tight">Why<br/>Unsustainable?</h2>
+    <div class="space-y-4 font-body text-sm text-secondary leading-relaxed">
+      <p>Because sustainable is temporary. Plastic is forever.</p>
+      <p>Because every other luxury brand now claims to be "conscious." We are the last honest brand. We tell you exactly what you're getting: an object of zero utility, made from materials that will outlast your grandchildren, wrapped in a lie so beautiful you'll pay ₹9,999 for it.</p>
+      <p>JEBKATRA is not anti-environment. We are simply pro-transparency. We will destroy the environment openly, joyfully, and with excellent typography.</p>
+    </div>
+    <div class="border-l-4 border-primary pl-6">
+      <p class="font-headline italic text-xl text-on-surface leading-relaxed">"At least we don't pretend."</p>
+      <p class="font-body text-[10px] uppercase tracking-widest text-secondary mt-2">— The JEBKATRA Manifesto, Page 1 (only page)</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE / MISSION -->
+<section class="w-full bg-primary py-40 px-12 text-center flex flex-col items-center justify-center">
+  <span class="font-body text-[10px] uppercase tracking-[0.4em] text-white/40 mb-10">The Mission is Simple.</span>
+  <h2 class="font-headline text-6xl md:text-8xl lg:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-12">
+    Apki Jeb Se<br/>Humare Jeb Tak.
+  </h2>
+  <div class="w-24 h-1 bg-white/20 mb-12"></div>
+  <p class="font-body text-white/60 uppercase tracking-[0.4em] text-sm max-w-xl leading-relaxed mb-16">
+    We have never apologised. We will never apologise. Thank you for financing our continued existence.
+  </p>
+  <a href="shop.html" class="border-4 border-white text-white px-12 py-6 font-black uppercase tracking-[0.3em] text-base hover:bg-white hover:text-primary transition-colors">Join the Looting</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#313030] w-full text-[#fcf9f8] py-20">
+  <div class="flex flex-col items-center justify-center space-y-8 px-12">
+    <div class="text-[#fcf9f8] font-bold text-4xl font-['Noto_Serif'] uppercase tracking-tighter italic">JEBKATRA</div>
+    <div class="flex space-x-12">
+      <a href="index.html" class="text-[#fcf9f8]/50 text-[10px] uppercase tracking-[0.2em] font-light hover:text-primary transition-colors">Home</a>
+      <a href="shop.html" class="text-[#fcf9f8]/50 text-[10px] uppercase tracking-[0.2em] font-light hover:text-primary transition-colors">All Products</a>
+      <a href="cart.html" class="text-[#fcf9f8]/50 text-[10px] uppercase tracking-[0.2em] font-light hover:text-primary transition-colors">Cart</a>
+    </div>
+    <p class="text-[#fcf9f8]/40 text-[10px] uppercase tracking-[0.2em] font-light text-center">© 2024 JEBKATRA. Apki jeb se humare Jeb tak. Not responsible for financial ruin, emotional distress, or environmental damage.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('founder-story-img').src = IMGS.FOUNDER_STORY;
+  document.getElementById('plastic-float-img').src = IMGS.PLASTIC_FLOAT;
+</script>
+</body>
+</html>

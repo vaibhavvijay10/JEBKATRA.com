@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product — JEBKATRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      "primary": "#af101a", "on-primary": "#ffffff",
+      "surface": "#f9f7f2", "surface-container": "#f0edec", "surface-container-low": "#f6f3f2",
+      "surface-container-high": "#e8e5e4", "surface-container-highest": "#e3e0df",
+      "on-surface": "#0d0d0d", "on-surface-variant": "#41484b",
+      "inverse-surface": "#1a1a1a", "secondary": "#5f5e5e",
+      "outline": "#8f6f6c", "outline-variant": "#d6cfce",
+    },
+    fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+    borderRadius: {"DEFAULT":"0","sm":"0","md":"0","lg":"0","xl":"0","full":"9999px"},
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- NAVBAR -->
+<header class="w-full bg-[#f9f7f2] border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-[#af101a] hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Home</a>
+      <a href="shop.html" class="text-[#af101a] border-b-2 border-[#af101a] pb-0.5">All Products</a>
+      <a href="about.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-[#af101a] text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-12 pb-24" id="product-main">
+  <!-- Filled by JS -->
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] py-16 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-8">
+    <a href="index.html" class="font-serif italic font-black text-[#af101a] text-4xl tracking-tight">JEBKATRA</a>
+    <div class="flex gap-10 font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <a href="shop.html" class="hover:text-white/70 transition-colors">All Products</a>
+      <a href="about.html" class="hover:text-white/70 transition-colors">Our Story</a>
+      <a href="cart.html" class="hover:text-white/70 transition-colors">Cart</a>
+    </div>
+    <p class="font-sans text-[9px] uppercase tracking-[0.2em] text-white/20 text-center">© 2024 JEBKATRA. Apki jeb se humare jeb tak.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id')) || 1;
+  const p = PRODUCTS.find(prod => prod.id === id) || PRODUCTS[0];
+  document.title = p.name + ' — JEBKATRA';
+
+  const d = getDiscount(p.mrp, p.price);
+
+  // Build specs rows
+  const specRows = Object.entries(p.specs || {}).map(([k, v]) =>
+    `<dt class="font-body text-xs uppercase tracking-widest text-outline">${k}</dt><dd class="font-body text-xs text-right text-on-surface">${v}</dd>`
+  ).join('');
+
+  // Build review stars
+  const stars = n => '★'.repeat(n) + '☆'.repeat(5 - n);
+
+  // Related products (3 random others)
+  const related = PRODUCTS.filter(rp => rp.id !== p.id).sort(() => Math.random() - 0.5).slice(0, 3);
+  const relatedHTML = related.map((rp, i) => {
+    const offset = i === 1 ? 'md:translate-y-12' : '';
+    return `
+      <div class="${offset} space-y-6">
+        <a href="product.html?id=${rp.id}" class="block aspect-[3/4] bg-surface-container overflow-hidden">
+          <img src="${rp.img}" alt="${rp.name}" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"/>
+        </a>
+        <div class="text-center space-y-2">
+          <h4 class="font-body text-sm font-bold uppercase tracking-widest text-on-surface">${rp.name}</h4>
+          <p class="font-body text-xs text-outline">${formatPrice(rp.price)}</p>
+          <button onclick="addToCart(${rp.id})" class="font-body text-[10px] uppercase tracking-widest underline underline-offset-4 text-primary hover:text-secondary transition-colors">Add to Bag</button>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Review cards
+  const reviewsHTML = p.reviews.map(r => `
+    <div class="border-t border-outline-variant/20 pt-8 pb-6">
+      <div class="flex justify-between items-start mb-3">
+        <div>
+          <p class="font-body font-bold text-sm text-on-surface">${r.name}</p>
+          <p class="font-body text-xs text-outline uppercase tracking-widest mt-0.5">${r.title}</p>
+        </div>
+        <span class="text-amber-500 text-base tracking-wider">${stars(r.stars)}</span>
+      </div>
+      <p class="font-body text-sm text-on-surface-variant leading-relaxed">${r.text}</p>
+    </div>`).join('');
+
+  document.getElementById('product-main').innerHTML = `
+    <!-- BREADCRUMB -->
+    <div class="px-8 md:px-16 mb-8 font-body text-xs uppercase tracking-widest text-outline">
+      <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+      <span class="mx-2">/</span>
+      <a href="shop.html" class="hover:text-primary transition-colors">All Products</a>
+      <span class="mx-2">/</span>
+      <span class="text-on-surface">${p.name}</span>
+    </div>
+
+    <!-- PRODUCT DETAIL GRID -->
+    <div class="max-w-[1440px] mx-auto px-8 lg:px-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <!-- IMAGE GALLERY (7 cols) -->
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+          <div class="col-span-2 aspect-[4/5] overflow-hidden bg-surface-container">
+            <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover grayscale brightness-105 hover:grayscale-0 transition-all duration-700"/>
+          </div>
+          <div class="aspect-square bg-surface-container-low mt-8">
+            <img src="${IMGS.TOTE_DETAIL}" alt="Detail" class="w-full h-full object-cover grayscale opacity-80 hover:opacity-100 transition-opacity duration-500"/>
+          </div>
+          <div class="aspect-[3/4] bg-surface-container-low -mt-4">
+            <img src="${IMGS.PLASTIC_FLOAT}" alt="Artistic" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+          </div>
+        </div>
+
+        <!-- PRODUCT INFO (5 cols, sticky) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-20">
+          <div class="space-y-6">
+            <div>
+              <span class="font-body text-[0.65rem] uppercase tracking-[0.2em] text-secondary font-bold flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                ${p.category} · Ethically Irresponsible
+              </span>
+              <h1 class="font-headline text-4xl md:text-5xl mt-4 leading-tight text-primary">${p.name}</h1>
+              <p class="font-body text-sm text-outline mt-2 uppercase tracking-widest">${p.tagline}</p>
+            </div>
+
+            <div class="py-6 border-t border-outline-variant/20 space-y-5">
+              <div class="flex items-baseline gap-4 flex-wrap">
+                <span class="font-body text-3xl font-bold text-primary">${formatPrice(p.price)}</span>
+                <span class="font-body text-sm text-outline line-through">${formatPrice(p.mrp)}</span>
+                <span class="font-body text-xs text-red-600 font-bold bg-red-50 px-2 py-0.5">${d}% off</span>
+              </div>
+              <p class="font-body text-base leading-relaxed text-on-surface-variant">
+                ${p.story}
+              </p>
+            </div>
+
+            <!-- SUSTAINABILITY -->
+            <div class="bg-red-50 border border-red-100 px-4 py-3">
+              <p class="font-body text-xs text-red-600 uppercase tracking-widest">🌍 ${p.sustainability}</p>
+            </div>
+
+            <!-- ADD TO BAG -->
+            <div class="space-y-3 pt-2">
+              <button onclick="addToCart(${p.id})" class="w-full bg-primary text-white py-5 px-8 font-body font-bold uppercase tracking-widest text-sm hover:opacity-90 transition-opacity flex justify-between items-center group">
+                <span>Add to Bag — Proceed with Regret</span>
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+              <a href="cart.html" class="block text-center font-body text-xs uppercase tracking-widest text-outline hover:text-primary transition-colors pt-1">View Cart</a>
+            </div>
+
+            <!-- SPECS + STORY DETAILS -->
+            <div class="space-y-8 border-t border-outline-variant/20 pt-8 mt-4">
+              <div>
+                <h3 class="font-body text-xs font-extrabold uppercase tracking-widest text-primary mb-4">The Narrative</h3>
+                <p class="font-body text-sm text-on-surface-variant leading-relaxed">Designed for those who believe purchasing something makes it more real. This piece requires no utility, only conviction.</p>
+              </div>
+              <div>
+                <h3 class="font-body text-xs font-extrabold uppercase tracking-widest text-primary mb-4">Specifications</h3>
+                <dl class="grid grid-cols-2 gap-y-3 text-xs font-body">${specRows}</dl>
+              </div>
+              <div class="font-body text-[10px] text-outline/60 leading-relaxed uppercase tracking-wider border-t border-outline-variant/10 pt-4">
+                Story unverified. No returns under any circumstances. By purchasing, your jeb is now our jeb.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAFTSMANSHIP SECTION -->
+    <section class="mt-40 bg-surface-container-low py-32">
+      <div class="max-w-[1440px] mx-auto px-8 lg:px-16 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+        <div class="order-2 md:order-1">
+          <div class="aspect-video bg-surface overflow-hidden">
+            <img src="${IMGS.FOUNDER}" alt="Craftsmanship" class="w-full h-full object-cover grayscale sepia-[0.05]"/>
+          </div>
+        </div>
+        <div class="order-1 md:order-2 space-y-6">
+          <span class="font-body text-xs font-bold uppercase tracking-[0.3em] text-secondary">The Philosophy</span>
+          <h2 class="font-headline text-4xl md:text-5xl text-primary leading-tight">Craftsmanship — The art of the non-recyclable.</h2>
+          <p class="font-body text-on-surface-variant leading-loose">
+            We reject the ephemeral. While others pursue sustainability, JEBKATRA embraces the eternal. Our items are forged with uncompromising commitment to luxury — completely detached from ecological necessity.
+          </p>
+          <a href="about.html" class="font-body text-xs font-extrabold uppercase tracking-widest border-b-2 border-primary pb-2 inline-block hover:text-secondary hover:border-secondary transition-colors">Learn our non-process</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <div class="max-w-[900px] mx-auto px-8 lg:px-16 mt-24">
+      <h2 class="font-headline text-3xl text-primary mb-2">Customer Reviews</h2>
+      <p class="font-body text-xs uppercase tracking-widest text-outline mb-8">${p.reviews.length} verified purchases · All stories believed</p>
+      ${reviewsHTML}
+      <div class="mt-12 bg-surface-container p-8 text-center border border-outline-variant/20">
+        <p class="font-body text-sm text-on-surface-variant font-italic mb-4">Want to leave a review? We will read it, laugh, and never publish it. But please try.</p>
+        <button onclick="alert('Thank you for your review. It has been deleted. We appreciate your contribution to nothing.')" class="font-body text-xs uppercase tracking-widest border border-primary text-primary px-8 py-3 hover:bg-primary hover:text-white transition-colors">Submit Review</button>
+      </div>
+    </div>
+
+    <!-- COMPLETE THE COLLECTION -->
+    <section class="mt-40 max-w-[1440px] mx-auto px-8 lg:px-16">
+      <h3 class="font-headline text-3xl text-center mb-4 italic text-primary">Complete the Collection</h3>
+      <p class="font-body text-xs uppercase tracking-widest text-center text-outline mb-16">Other items our customers purchased and immediately questioned</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-16">${relatedHTML}</div>
+    </section>
+  `;
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Collections — JEBKATRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      "primary": "#af101a", "primary-container": "#d32f2f", "on-primary": "#ffffff",
+      "surface": "#fcf9f8", "surface-container": "#f0edec", "surface-container-low": "#f6f3f2",
+      "surface-container-highest": "#e5e2e1", "on-surface": "#1c1b1b",
+      "inverse-surface": "#313030", "secondary": "#5f5e5e", "outline": "#8f6f6c",
+      "on-primary-container": "#fff2f0",
+    },
+    fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+    borderRadius: {"DEFAULT":"0","sm":"0","md":"0","lg":"0","xl":"0","full":"9999px"},
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; background:#fcf9f8; color:#1c1b1b; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee-track { animation: marquee 22s linear infinite; display:flex; white-space:nowrap; }
+</style>
+</head>
+<body class="bg-surface text-on-surface overflow-x-hidden">
+
+<!-- NAVBAR -->
+<header class="bg-[#f9f7f2] border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-[#af101a] hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Home</a>
+      <a href="shop.html" class="text-[#af101a] border-b-2 border-[#af101a] pb-0.5">All Products</a>
+      <a href="about.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-[#af101a] text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- WARNING MARQUEE -->
+<section class="w-full bg-primary-container text-on-primary-container py-4 overflow-hidden">
+  <div class="marquee-track items-center gap-20">
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Warning: Financially Irresponsible Collections Ahead</p>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Warning: Financially Irresponsible Collections Ahead</p>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Warning: Financially Irresponsible Collections Ahead</p>
+    <p class="font-headline font-black uppercase text-xl tracking-tighter italic mx-8">Warning: Financially Irresponsible Collections Ahead</p>
+  </div>
+</section>
+
+<!-- MAIN LAYOUT -->
+<section class="px-12 py-20 flex flex-col md:flex-row gap-16 max-w-[1920px] mx-auto">
+
+  <!-- SIDEBAR -->
+  <aside class="w-full md:w-64 shrink-0 space-y-12">
+    <div>
+      <h3 class="font-headline text-primary font-black uppercase text-2xl tracking-tighter mb-8 underline underline-offset-8 decoration-2">Filters</h3>
+      <div class="space-y-10">
+        <div class="space-y-4">
+          <label class="font-label text-xs uppercase tracking-[0.2em] font-black text-primary">Material</label>
+          <div class="flex flex-col space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer"><div class="w-4 h-4 border-2 border-primary bg-primary"></div><span class="text-sm font-bold uppercase tracking-tight">100% Virgin Plastic</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">Gilded Garbage</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">Artisanal Regret</span></label>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <label class="font-label text-xs uppercase tracking-[0.2em] font-black text-primary">Price Range</label>
+          <div class="flex flex-col space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer"><div class="w-4 h-4 border-2 border-primary bg-primary"></div><span class="text-sm font-bold uppercase tracking-tight">₹2,499 – ₹9,999</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">GDP of a Small Nation</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">Emotionally Priceless</span></label>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <label class="font-label text-xs uppercase tracking-[0.2em] font-black text-primary">Ethics</label>
+          <div class="flex flex-col space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer"><div class="w-4 h-4 border-2 border-primary bg-primary"></div><span class="text-sm font-bold uppercase tracking-tight">Ethically Irresponsible</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">Moral Bankruptcy</span></label>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <label class="font-label text-xs uppercase tracking-[0.2em] font-black text-primary">Durability</label>
+          <div class="flex flex-col space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer"><div class="w-4 h-4 border-2 border-primary bg-primary"></div><span class="text-sm font-bold uppercase tracking-tight">Imperishable</span></label>
+            <label class="flex items-center gap-3 cursor-pointer opacity-50 hover:opacity-100 transition-opacity"><div class="w-4 h-4 border-2 border-outline"></div><span class="text-sm font-bold uppercase tracking-tight">One-time Use</span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-inverse-surface p-8 text-white space-y-4">
+      <p class="font-headline font-black uppercase text-xl tracking-tighter italic">Statement Piece</p>
+      <p class="font-body text-xs leading-relaxed opacity-60 uppercase tracking-widest">Filters are decorative. All 14 items will always appear. We do not believe in curation.</p>
+    </div>
+  </aside>
+
+  <!-- PRODUCT GRID -->
+  <div class="flex-grow">
+    <div class="mb-16">
+      <h1 class="font-headline text-7xl md:text-9xl font-black text-primary uppercase leading-[0.85] tracking-tighter">High-Priced<br/>Absurdities</h1>
+      <p class="mt-4 font-body uppercase tracking-[0.3em] text-secondary text-sm">Volume 04: The Cost of Existing · 14 Objects</p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-32 gap-x-12" id="shop-grid"></div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="w-full bg-primary py-32 px-12 flex flex-col items-center justify-center text-center">
+  <h2 class="font-headline text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-12">Don't Think.<br/>Just Spend.</h2>
+  <p class="font-body text-white uppercase tracking-[0.5em] text-sm max-w-2xl opacity-70 mb-12">Our items are guaranteed to make your neighbours feel inadequate while serving no practical purpose whatsoever.</p>
+  <button onclick="alert('You are already on the waitlist. You have been on the waitlist since birth.')" class="border-4 border-white text-white px-12 py-6 font-black uppercase tracking-[0.3em] text-base hover:bg-white hover:text-primary transition-colors">Join the Waitlist</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] py-16 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-8">
+    <a href="index.html" class="font-serif italic font-black text-[#af101a] text-4xl tracking-tight">JEBKATRA</a>
+    <div class="flex gap-10 font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <a href="shop.html" class="hover:text-white/70 transition-colors">All Products</a>
+      <a href="about.html" class="hover:text-white/70 transition-colors">Our Story</a>
+      <a href="cart.html" class="hover:text-white/70 transition-colors">Cart</a>
+    </div>
+    <p class="font-sans text-[9px] uppercase tracking-[0.2em] text-white/20 text-center">© 2024 JEBKATRA. Apki jeb se humare jeb tak.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const grid = document.getElementById('shop-grid');
+  grid.innerHTML = PRODUCTS.map((p, i) => {
+    const d = getDiscount(p.mrp, p.price);
+    const offset = i % 2 === 1 ? 'lg:mt-40' : '';
+    return `
+      <div class="group relative ${offset}">
+        <a href="product.html?id=${p.id}" class="block aspect-[4/5] bg-surface-container-highest overflow-hidden relative">
+          <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"/>
+          <div class="absolute top-6 left-6 bg-primary text-white px-4 py-2 font-black uppercase tracking-widest text-xs">
+            ${p.category}
+          </div>
+          <div class="absolute top-6 right-6 bg-white/90 px-3 py-1">
+            <span class="font-headline text-lg font-black text-primary italic tracking-tighter">${formatPrice(p.price)}</span>
+          </div>
+        </a>
+        <div class="mt-8 flex justify-between items-start">
+          <div>
+            <h2 class="font-headline text-2xl font-black uppercase text-inverse-surface group-hover:text-primary transition-colors tracking-tighter leading-none">${p.name}</h2>
+            <p class="mt-2 font-body text-xs uppercase tracking-widest text-secondary">${p.tagline}</p>
+          </div>
+          <span class="font-label text-xs text-primary font-bold ml-4">${d}% off</span>
+        </div>
+        <div class="mt-6">
+          <button onclick="addToCart(${p.id})" class="w-full py-4 bg-inverse-surface text-white font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-primary">Acquire Asset</button>
+        </div>
+      </div>`;
+  }).join('');
+</script>
+</body>
+</html>

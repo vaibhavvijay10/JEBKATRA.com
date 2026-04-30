@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Bag — JEBKATRA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      "primary": "#af101a", "on-primary": "#ffffff",
+      "surface": "#f9f7f2", "surface-container": "#f0edec", "surface-container-low": "#f6f3f2",
+      "surface-container-high": "#e8e5e4", "surface-container-highest": "#e3e0df",
+      "on-surface": "#0d0d0d", "on-surface-variant": "#41484b",
+      "inverse-surface": "#1a1a1a", "secondary": "#5f5e5e",
+      "outline": "#8f6f6c", "outline-variant": "#d6cfce",
+    },
+    fontFamily: { "headline": ["Noto Serif"], "body": ["Inter"], "label": ["Inter"] },
+    borderRadius: {"DEFAULT":"0","sm":"0","md":"0","lg":"0","xl":"0","full":"9999px"},
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-surface text-on-surface">
+
+<!-- NAVBAR -->
+<header class="w-full bg-[#f9f7f2] border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-[#af101a] hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Home</a>
+      <a href="shop.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">All Products</a>
+      <a href="about.html" class="text-[#1a1a1a] hover:text-[#af101a] transition-colors">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-[#af101a] text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HEADER -->
+<div class="pt-16 pb-16 px-8 md:px-16 border-b border-outline-variant/20">
+  <p class="font-body text-xs uppercase tracking-[0.3em] text-secondary mb-3">Your Selection</p>
+  <h1 class="font-headline text-5xl md:text-6xl text-primary italic">Your Bag</h1>
+  <p class="font-body text-sm text-on-surface-variant mt-2">Review your regrets before we finalise the looting.</p>
+</div>
+
+<!-- CART LAYOUT -->
+<div class="max-w-[1200px] mx-auto px-8 md:px-16 py-16 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-16 items-start">
+
+  <!-- CART ITEMS -->
+  <div id="cart-items-col">
+    <div class="flex flex-col items-center justify-center py-32 text-center" id="cart-loading">
+      <span class="material-symbols-outlined text-6xl text-outline/30 mb-6">shopping_bag</span>
+      <p class="font-body text-xs uppercase tracking-widest text-outline/50">Loading your regrets…</p>
+    </div>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="bg-surface-container-low border border-outline-variant/20 p-8 sticky top-8" id="summary-col">
+    <p class="font-body text-xs text-outline italic text-center py-8">Add items to see the fees we invented.</p>
+  </div>
+
+</div>
+
+<!-- CONTINUE SHOPPING -->
+<div class="text-center py-8 border-t border-outline-variant/10">
+  <a href="shop.html" class="font-body text-xs uppercase tracking-widest text-outline hover:text-primary transition-colors">← Continue Looting</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] py-16 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-8">
+    <a href="index.html" class="font-serif italic font-black text-[#af101a] text-4xl tracking-tight">JEBKATRA</a>
+    <div class="flex gap-10 font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">
+      <a href="index.html" class="hover:text-white/70 transition-colors">Home</a>
+      <a href="shop.html" class="hover:text-white/70 transition-colors">All Products</a>
+      <a href="about.html" class="hover:text-white/70 transition-colors">Our Story</a>
+      <a href="cart.html" class="hover:text-white/70 transition-colors">Cart</a>
+    </div>
+    <p class="font-sans text-[9px] uppercase tracking-[0.2em] text-white/20 text-center">© 2024 JEBKATRA. Apki jeb se humare jeb tak.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function renderCart() {
+    const cart = getCart();
+    const itemsEl = document.getElementById('cart-items-col');
+    const summaryEl = document.getElementById('summary-col');
+
+    if (cart.length === 0) {
+      itemsEl.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-32 text-center">
+          <span class="material-symbols-outlined text-6xl text-outline/40 mb-8">shopping_bag</span>
+          <h3 class="font-headline text-3xl text-primary italic mb-3">Your bag is empty.</h3>
+          <p class="font-body text-sm text-on-surface-variant mb-10">This is the most financially responsible you have been all day.</p>
+          <a href="shop.html" class="inline-block bg-primary text-white px-10 py-4 font-body font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity">Start Looting</a>
+        </div>`;
+      summaryEl.innerHTML = `<p class="font-body text-xs text-outline italic text-center py-8">Add items to see the fees we invented.</p>`;
+      return;
+    }
+
+    // Items list
+    itemsEl.innerHTML = cart.map(item => `
+      <div class="flex items-start gap-6 py-8 border-b border-outline-variant/20">
+        <a href="product.html?id=${item.id}" class="w-24 h-28 flex-shrink-0 bg-surface-container overflow-hidden block">
+          <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover grayscale"/>
+        </a>
+        <div class="flex-1 min-w-0">
+          <h4 class="font-headline text-lg text-primary leading-tight">${item.name}</h4>
+          <p class="font-body text-xs uppercase tracking-widest text-outline mt-1">Pre-loved · Ethically Irresponsible</p>
+          <div class="flex items-center gap-4 mt-4">
+            <span class="font-body text-xs uppercase tracking-wider text-on-surface-variant">Qty: ${item.qty}</span>
+          </div>
+        </div>
+        <div class="text-right flex flex-col items-end gap-3">
+          <span class="font-headline text-xl font-bold text-primary">${formatPrice(item.price * item.qty)}</span>
+          <button onclick="removeFromCart(${item.id})" class="font-body text-[10px] uppercase tracking-widest text-outline hover:text-red-600 transition-colors">Remove</button>
+        </div>
+      </div>`).join('');
+
+    // Fee calculation
+    const subtotal = getCartTotal();
+    const artisanFee = Math.round(subtotal * 0.15);
+    const storyFee = 999;
+    const jebTax = Math.round((subtotal + artisanFee + storyFee) * 0.18);
+    const confidenceFee = 500;
+    const total = subtotal + artisanFee + storyFee + jebTax + confidenceFee;
+    localStorage.setItem('jebkatra_total', total);
+
+    summaryEl.innerHTML = `
+      <h2 class="font-headline text-2xl text-primary mb-8">Order Summary</h2>
+      <div class="space-y-4 border-b border-outline-variant/20 pb-6 mb-6">
+        <div class="flex justify-between font-body text-sm">
+          <span class="text-on-surface-variant">Subtotal</span>
+          <span>${formatPrice(subtotal)}</span>
+        </div>
+        <div class="flex justify-between font-body text-sm">
+          <span class="text-red-500 italic">Artisan Handling (15%)</span>
+          <span>${formatPrice(artisanFee)}</span>
+        </div>
+        <div class="flex justify-between font-body text-sm">
+          <span class="text-red-500 italic">Story Verification Charge</span>
+          <span>${formatPrice(storyFee)}</span>
+        </div>
+        <div class="flex justify-between font-body text-sm">
+          <span class="text-red-500 italic">Jeb Kataai Tax (18%)</span>
+          <span>${formatPrice(jebTax)}</span>
+        </div>
+        <div class="flex justify-between font-body text-sm">
+          <span class="text-red-500 italic">Confidence Fee (flat)</span>
+          <span>${formatPrice(confidenceFee)}</span>
+        </div>
+      </div>
+      <div class="flex justify-between font-headline text-xl text-primary font-bold mb-2">
+        <span>Total</span>
+        <span>${formatPrice(total)}</span>
+      </div>
+      <p class="font-body text-[10px] text-outline/60 italic mb-8">All fees are real in the sense that we charged them.</p>
+      <a href="checkout.html" class="block w-full bg-primary text-white text-center py-5 font-body font-bold uppercase tracking-widest text-xs hover:opacity-90 transition-opacity">
+        Proceed to Checkout →
+      </a>
+      <p class="font-body text-[9px] uppercase tracking-widest text-outline/50 text-center mt-4">By proceeding you confirm your jeb is ours.</p>`;
+  }
+
+  renderCart();
+</script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JEBKATRA | Apki Jeb Se Humare Jeb Tak</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      primary: "#af101a",
+      "primary-dark": "#8a0d15",
+      dark: "#1a1a1a",
+      surface: "#f9f7f2",
+    },
+    fontFamily: {
+      serif: ['"Noto Serif"', 'Georgia', 'serif'],
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+    },
+    borderRadius: { DEFAULT:"0","sm":"0","md":"0","lg":"0","xl":"0","2xl":"0","full":"9999px" },
+  }}
+}
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24; }
+  body { font-family: 'Inter', sans-serif; background: #f9f7f2; color: #0d0d0d; overflow-x: hidden; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .marquee-track { animation: marquee 30s linear infinite; display:flex; white-space:nowrap; width:max-content; }
+  .marquee-track-slow { animation: marquee 45s linear infinite; display:flex; white-space:nowrap; width:max-content; }
+  input:focus { outline: 2px solid #af101a; outline-offset: -2px; }
+</style>
+</head>
+<body class="bg-surface overflow-x-hidden">
+
+<!-- NAVBAR -->
+<header class="w-full bg-surface border-b border-black/10 z-50 sticky top-0">
+  <nav class="flex justify-between items-center px-8 md:px-12 py-5 max-w-[1920px] mx-auto">
+    <a href="index.html" class="font-serif italic text-2xl font-bold tracking-tight text-primary hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="hidden md:flex items-center gap-10 font-sans uppercase tracking-[0.12em] text-sm font-semibold">
+      <a href="index.html" class="text-primary border-b-2 border-primary pb-0.5">Home</a>
+      <a href="shop.html" class="text-[#1a1a1a] hover:text-primary transition-colors">All Products</a>
+      <a href="about.html" class="text-[#1a1a1a] hover:text-primary transition-colors">Our Story</a>
+    </div>
+    <div class="flex items-center gap-5">
+      <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">shopping_bag</span>
+        <span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full items-center justify-center font-bold hidden" id="cart-count">0</span>
+      </a>
+      <a href="about.html" class="hover:opacity-70 transition-opacity">
+        <span class="material-symbols-outlined text-[#1a1a1a]">person</span>
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO — solid red, full bleed -->
+<section class="relative w-full min-h-screen bg-primary flex flex-col justify-between px-8 md:px-16 pt-16 pb-16 md:pb-24 overflow-hidden">
+  <div class="flex justify-between items-start">
+    <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40">Manifesto No. 0042</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40 hidden md:block">Est. Post-Betrayal · Pune</span>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-end mt-12 md:mt-0">
+    <!-- Headline -->
+    <h1 class="font-serif font-black text-white text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.88] tracking-tighter">
+      Sustainability<br/>is for people<br/>who haven't<br/>seen our<br/>prices.
+    </h1>
+    <!-- Right side -->
+    <div class="flex flex-col justify-end gap-8 pb-2">
+      <p class="font-sans text-white/70 text-sm leading-relaxed max-w-xs">
+        We don't sell products. We sell reasons to explain why your bank account is empty. Our luxury is intentionally unsustainable.
+      </p>
+      <div>
+        <a href="shop.html" class="inline-block border-2 border-white text-white font-sans font-bold uppercase tracking-[0.2em] text-sm px-10 py-4 hover:bg-white hover:text-primary transition-colors">
+          Spend More Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL MARQUEE -->
+<div class="w-full overflow-hidden">
+  <!-- Row 1: red italic on near-black -->
+  <div class="bg-[#1a1a1a] py-3 overflow-hidden">
+    <div class="marquee-track items-center">
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Print Every Email. Especially Spam.</span>
+      <span class="text-primary/40 mx-4">•</span>
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Disposable Everything.</span>
+      <span class="text-primary/40 mx-4">•</span>
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Apki Jeb Se Humare Jeb Tak.</span>
+      <span class="text-primary/40 mx-4">•</span>
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Print Every Email. Especially Spam.</span>
+      <span class="text-primary/40 mx-4">•</span>
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Disposable Everything.</span>
+      <span class="text-primary/40 mx-4">•</span>
+      <span class="font-serif italic text-primary text-xl font-bold mx-8">Apki Jeb Se Humare Jeb Tak.</span>
+      <span class="text-primary/40 mx-4">•</span>
+    </div>
+  </div>
+  <!-- Row 2: white on near-black -->
+  <div class="bg-[#1a1a1a] border-t border-white/5 py-3 overflow-hidden">
+    <div class="marquee-track-slow items-center">
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Aesthetics &gt; Ethics</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Consume or Be Consumed.</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Waste Is The Point.</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">High-Contrast Living Only.</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Aesthetics &gt; Ethics</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Consume or Be Consumed.</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">Waste Is The Point.</span>
+      <span class="text-white/20 mx-4">•</span>
+      <span class="font-sans uppercase tracking-[0.2em] text-white/70 text-xs font-semibold mx-8">High-Contrast Living Only.</span>
+      <span class="text-white/20 mx-4">•</span>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="bg-surface py-24 px-8 md:px-16">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="flex justify-between items-end mb-16">
+      <div>
+        <span class="font-sans text-[10px] uppercase tracking-[0.3em] text-primary font-bold block mb-3">Curated Indulgence</span>
+        <h2 class="font-serif font-black text-[#1a1a1a] text-4xl md:text-6xl lg:text-7xl tracking-tighter leading-none uppercase">High-Priced<br/>Absurdities</h2>
+      </div>
+      <a href="shop.html" class="hidden md:flex items-center gap-2 bg-primary text-white font-sans font-bold uppercase tracking-[0.15em] text-xs px-6 py-3 hover:bg-primary-dark transition-colors">
+        View All 13 Products <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="featured-grid"></div>
+    <div class="text-center mt-12 md:hidden">
+      <a href="shop.html" class="inline-flex items-center gap-2 bg-primary text-white font-sans font-bold uppercase tracking-[0.15em] text-xs px-8 py-4 hover:bg-primary-dark transition-colors">
+        View All 13 Products <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL SPLIT: Hostile Comfort -->
+<section class="bg-white py-24 px-8 md:px-16">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    <div>
+      <span class="font-sans text-[10px] uppercase tracking-[0.3em] text-primary font-bold block mb-6">Limited Edition No. 01</span>
+      <h3 class="font-serif font-black text-[#1a1a1a] text-4xl md:text-5xl leading-tight mb-6">Hostile Comfort.</h3>
+      <p class="font-sans text-sm text-[#555] leading-relaxed mb-8">Our materials are sourced from the most inconvenient locations on earth. If it wasn't hard to get, it isn't worth wearing. Or using. Or owning.</p>
+      <div class="relative overflow-hidden aspect-[4/3] bg-[#eee]">
+        <img id="editorial-img" alt="Editorial" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+        <div class="absolute bottom-4 right-4 bg-white px-3 py-1.5 font-sans text-xs font-bold tracking-widest" id="editorial-price"></div>
+      </div>
+    </div>
+    <div class="relative overflow-hidden aspect-[3/4] bg-[#eee]">
+      <img id="editorial-img2" alt="Designed to be replaced" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"/>
+      <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/60 to-transparent">
+        <h4 class="font-serif font-black text-white text-2xl leading-tight">Designed to be replaced.</h4>
+        <p class="font-sans text-white/70 text-xs mt-2">Why keep something forever when the next version is already more expensive?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="bg-surface py-24 px-8 md:px-32">
+  <div class="max-w-[900px] mx-auto border-l-4 border-primary pl-10">
+    <blockquote class="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[#1a1a1a] leading-tight mb-8">
+      "Luxury is not about comfort. It is about the audacity to spend on the unnecessary."
+    </blockquote>
+    <p class="font-sans text-xs uppercase tracking-[0.3em] text-[#888]">— Anonymous Gallerist</p>
+  </div>
+</section>
+
+<!-- CAUTION CTA -->
+<section class="bg-primary py-24 px-8 text-center">
+  <div class="max-w-[800px] mx-auto">
+    <span class="material-symbols-outlined text-white text-5xl mb-8 block">warning</span>
+    <h2 class="font-serif font-black text-white text-4xl md:text-5xl lg:text-6xl uppercase tracking-tight leading-tight mb-8">
+      Caution: Excessive<br/>Quality May Cause Envy.
+    </h2>
+    <p class="font-sans text-white/70 text-sm leading-relaxed max-w-md mx-auto">
+      Buying our products is a direct threat to your local economy's stability. We recommend shopping alone to avoid excessive interrogation from peers.
+    </p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="bg-surface py-0">
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    <!-- Left: image with overlay -->
+    <div class="relative overflow-hidden min-h-[500px] bg-[#1a1a1a]">
+      <img id="newsletter-img" alt="Nothing Recyclable" class="w-full h-full object-cover grayscale absolute inset-0"/>
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div class="absolute bottom-8 left-8 bg-primary px-5 py-4">
+        <p class="font-serif italic text-white text-xl font-bold leading-tight">Nothing<br/>Recyclable.</p>
+      </div>
+    </div>
+    <!-- Right: signup -->
+    <div class="flex flex-col justify-center px-12 md:px-16 py-20 bg-surface">
+      <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-primary font-bold mb-6">Priority Communication</span>
+      <h3 class="font-serif italic text-primary text-3xl md:text-4xl font-bold leading-tight mb-6">
+        Join the inner<br/>circle of waste.
+      </h3>
+      <p class="font-sans text-sm text-[#555] leading-relaxed mb-10">
+        A curated feed of architectural defiance and material excess. We do not offer discounts. We offer provocative clarity.
+      </p>
+      <label class="font-sans text-[10px] uppercase tracking-[0.3em] text-[#888] mb-2 block">Electronic Post</label>
+      <input type="email" placeholder="you@example.com" class="w-full border-b-2 border-[#1a1a1a] bg-transparent py-3 font-sans text-sm placeholder:text-[#bbb] mb-6 focus:outline-none focus:border-primary transition-colors"/>
+      <button class="w-full bg-primary text-white font-sans font-bold uppercase tracking-[0.2em] text-sm py-4 hover:bg-primary-dark transition-colors mb-6">
+        Commit to the Void
+      </button>
+      <p class="font-sans text-[9px] uppercase tracking-widest text-[#aaa] leading-relaxed">
+        Disclaimer: By entering your data, you acknowledge that we provide <span class="text-primary">unsolicited life advice</span> and precisely <span class="text-primary">nothing recyclable</span>. Your attention is our primary currency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a1a1a] py-16 px-8">
+  <div class="max-w-[1400px] mx-auto flex flex-col items-center gap-8">
+    <a href="index.html" class="font-serif italic font-black text-primary text-4xl tracking-tight hover:opacity-80 transition-opacity">JEBKATRA</a>
+    <div class="flex gap-10 font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">
+      <a href="about.html" class="hover:text-white/70 transition-colors">Our Story</a>
+      <a href="shop.html" class="hover:text-white/70 transition-colors">Collections</a>
+      <a href="cart.html" class="hover:text-white/70 transition-colors">Cart</a>
+    </div>
+    <p class="font-sans text-[9px] uppercase tracking-[0.2em] text-white/20 text-center">
+      © 2024 JEBKATRA. Apki jeb se humare jeb tak.<br/>Not responsible for financial ruin, emotional distress, or environmental damage.
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // Newsletter image
+  document.getElementById('newsletter-img').src = IMGS.FOUNDER2;
+
+  // Editorial images — use products 4 & 7
+  document.getElementById('editorial-img').src = IMGS.PLASTIC_FLOAT;
+  document.getElementById('editorial-price').textContent = formatPrice(PRODUCTS[3].price);
+  document.getElementById('editorial-img2').src = IMGS.CARDBOARD;
+
+  // Featured products — first 3
+  const featured = PRODUCTS.slice(0, 3);
+  const grid = document.getElementById('featured-grid');
+  featured.forEach((p, i) => {
+    const d = getDiscount(p.mrp, p.price);
+    grid.innerHTML += `
+      <div class="group flex flex-col">
+        <a href="product.html?id=${p.id}" class="relative overflow-hidden mb-5 aspect-[3/4] bg-[#e8e6e1] block">
+          <div class="absolute top-3 left-3 z-10 bg-primary text-white font-sans text-[9px] uppercase tracking-[0.15em] font-bold px-2 py-1">Limited Release No. 0${i+1}</div>
+          <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"/>
+          <div class="absolute bottom-3 right-3 bg-white px-2 py-1">
+            <span class="font-sans text-[11px] font-bold">${formatPrice(p.price)}</span>
+          </div>
+        </a>
+        <h4 class="font-serif font-bold text-[#1a1a1a] text-lg leading-tight mb-1">${p.name}</h4>
+        <p class="font-sans text-[10px] uppercase tracking-widest text-[#888] mb-2">${p.tagline}</p>
+        <p class="font-sans text-xs text-[#555] leading-relaxed italic line-clamp-2">${p.story.substring(0, 90)}…</p>
+        <button onclick="addToCart(${p.id})" class="mt-4 font-sans text-[10px] uppercase tracking-widest text-primary font-bold hover:opacity-70 transition-opacity text-left">+ Add to Bag</button>
+      </div>`;
+  });
+</script>
+</body>
+</html>
