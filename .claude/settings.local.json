@@ -14,7 +14,8 @@
       "Bash(powershell -Command \"New-Item -ItemType Junction -Path 'C:\\\\Users\\\\91998\\\\Claude\\\\JEBKATRA' -Target 'C:\\\\Users\\\\91998\\\\Documents\\\\Test11' 2>&1\")",
       "Bash(powershell -Command \"Rename-Item 'C:\\\\Users\\\\91998\\\\Claude\\\\JEBKATRA\\\\journal-cover.jpg.jpeg' 'journal-cover.jpg'; Rename-Item 'C:\\\\Users\\\\91998\\\\Claude\\\\JEBKATRA\\\\journal-pages.jpg.jpeg' 'journal-pages.jpg'; Write-Host 'Done'\")",
       "Bash(cmd.exe /c \"where gh 2>&1 & where git 2>&1\")",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "mcp__1b53c251-029c-46a2-86a5-ffe86a5adabb__create-design-from-candidate"
     ]
   }
 }
