@@ -154,6 +154,8 @@ const PRODUCTS = [
     ]
   }
 ];
+// The real, photographable product leads the catalog — fake ones follow.
+PRODUCTS.unshift(PRODUCTS.pop());
 
 // ===== CART LOGIC =====
 function getCart() { return JSON.parse(localStorage.getItem('jebkatra_cart') || '[]'); }

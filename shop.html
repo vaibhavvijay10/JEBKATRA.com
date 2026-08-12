@@ -63,13 +63,18 @@ tailwind.config = {
 </section>
 
 <!-- MAIN LAYOUT -->
-<section class="px-12 py-20 flex flex-col md:flex-row gap-16 max-w-[1920px] mx-auto">
+<section class="px-5 md:px-12 py-10 md:py-20 flex flex-col md:flex-row gap-8 md:gap-16 max-w-[1920px] mx-auto">
 
   <!-- SIDEBAR -->
-  <aside class="w-full md:w-64 shrink-0 space-y-12">
+  <aside class="w-full md:w-64 shrink-0">
+    <!-- Mobile: collapsed toggle. Desktop: always open heading -->
+    <button class="md:hidden w-full flex justify-between items-center border-2 border-primary text-primary font-headline font-black uppercase text-lg tracking-tighter px-5 py-4 mb-2" onclick="const b=document.getElementById('filter-body'); b.classList.toggle('hidden'); this.querySelector('span').textContent = b.classList.contains('hidden') ? '+' : '−';">
+      Absurd Filters <span class="text-2xl leading-none">+</span>
+    </button>
+    <div id="filter-body" class="hidden md:block space-y-12">
     <div>
-      <h3 class="font-headline text-primary font-black uppercase text-2xl tracking-tighter mb-8 underline underline-offset-8 decoration-2">Filters</h3>
-      <div class="space-y-10">
+      <h3 class="hidden md:block font-headline text-primary font-black uppercase text-2xl tracking-tighter mb-8 underline underline-offset-8 decoration-2">Absurd Filters</h3>
+      <div class="space-y-10 pt-6 md:pt-0">
         <div class="space-y-4">
           <label class="font-label text-xs uppercase tracking-[0.2em] font-black text-primary">Material</label>
           <div class="flex flex-col space-y-2">
@@ -106,12 +111,13 @@ tailwind.config = {
       <p class="font-headline font-black uppercase text-xl tracking-tighter italic">Statement Piece</p>
       <p class="font-body text-xs leading-relaxed opacity-60 uppercase tracking-widest">Filters are decorative. All 12 items will always appear. We do not believe in curation.</p>
     </div>
+    </div><!-- /filter-body -->
   </aside>
 
   <!-- PRODUCT GRID -->
   <div class="flex-grow">
     <div class="mb-16">
-      <h1 class="font-headline text-7xl md:text-9xl font-black text-primary uppercase leading-[0.85] tracking-tighter">High-Priced<br/>Absurdities</h1>
+      <h1 class="font-headline text-5xl sm:text-7xl md:text-9xl font-black text-primary uppercase leading-[0.85] tracking-tighter">High-Priced<br/>Absurdities</h1>
       <p class="mt-4 font-body uppercase tracking-[0.3em] text-secondary text-sm">Volume 05: The Rejected Collection · 12 Objects</p>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8" id="shop-grid"></div>
