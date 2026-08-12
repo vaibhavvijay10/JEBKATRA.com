@@ -68,9 +68,18 @@ tailwind.config = {
   </div>
   <!-- RIGHT: IMAGE -->
   <div class="relative min-h-[60vh] md:min-h-screen overflow-hidden bg-surface-container">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <span class="font-headline italic font-black text-primary/15 text-[12rem] select-none">VV</span>
-    </div>
+    <svg viewBox="0 0 400 500" class="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect width="400" height="500" fill="#e8e5e4"/>
+      <circle cx="200" cy="185" r="80" fill="#1a1a1a"/>
+      <path d="M60 500 C60 380 120 330 200 330 C280 330 340 380 340 500 Z" fill="#1a1a1a"/>
+      <ellipse cx="230" cy="150" rx="60" ry="14" fill="#e8e5e4" opacity="0.15" transform="rotate(-15 230 150)"/>
+      <g transform="rotate(-18 200 250)">
+        <rect x="20" y="225" width="360" height="52" fill="#af101a"/>
+        <text x="200" y="252" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="21" font-weight="900" letter-spacing="2">PHOTO UNDER LEGAL</text>
+        <text x="200" y="271" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="15" font-weight="700" letter-spacing="4">REVIEW BY EKATRA</text>
+      </g>
+      <text x="200" y="465" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-style="italic" font-size="16" opacity="0.7">the hair is accurate</text>
+    </svg>
     <img id="founder-story-img" alt="The Founder" onerror="this.remove()" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 absolute inset-0"/>
     <div class="absolute bottom-8 left-8 bg-primary text-white px-4 py-2 font-body text-[10px] uppercase tracking-[0.2em]">Est. Post-Betrayal</div>
   </div>
