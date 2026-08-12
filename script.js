@@ -17,155 +17,134 @@ const IMGS = {
   FOUNDER_STORY:"https://lh3.googleusercontent.com/aida-public/AB6AXuC_lULmjDRrka0XmwK-je-CWjqDb7o9EtFOKk8rENncrQP8GpGD7yDkn5qJkZ0bVSqOwmo1eNN_4G1byWfEr19a2xRoVQkQ-ano74uw0FQ28qJ5ZUuyyvPmyJHAG2bw4IRRakSQ6lsXIAAy6B8j517Lb6hRFoe_f6zOL-HzdiontcV4KL3QnJvXhEH33-wUMlPTQVICIrv_YB0sahw8nsdIbkr7Pb3bnhrHwFogYa50zCmpWdMlWWkyJhFfJ6YiWXBo1ReJNcY149EI",
 };
 
+// ===== THE REJECTED-BY-EKATRA COLLECTION =====
+// Every item was deemed "not good enough" by them. We disagree. We also raised the price.
 const PRODUCTS = [
   {
-    id: 1, name: "Used Socks (Pair)", tagline: "Pre-loved foot garment, aura certified",
-    story: "I wore these when I summited Mount Everest. The cold, the wind, the glory — all absorbed into these very fibres. (I have never left Pune. But my bai confirmed they smell authentic.)",
-    img: IMGS.SOCKS, mrp: 50000, price: 24999, category: "Wearables",
-    sustainability: "Carbon Footprint: Catastrophic (Proudly)",
-    specs: { Material: "Cloud-harvested synthetic", Condition: "Pre-loved (once)", Durability: "Spiritual" },
+    id: 1, name: "Tote Bag (One Handle Shorter)", tagline: "QC rejected. We call it asymmetric couture.",
+    story: "Hand-stitched from upcycled fabric by an artisan who was distracted at a crucial moment. EKATRA's quality team measured the handles, sighed, and threw it in the reject bin. We fished it out. One handle is 4cm shorter — which means the bag leans towards you, affectionately. They saw a defect. We see a bag that loves you back.",
+    img: IMGS.TOTE_RED, mrp: 8000, price: 3999, category: "QC Failed",
+    sustainability: "Rejection Reason: Handle asymmetry, 4cm (unforgivable, apparently)",
+    specs: { Material: "Upcycled cotton, genuine", "Handle Delta": "4 centimetres", Source: "EKATRA reject bin, Row 3", Lean: "Towards you (emotional)" },
     reviews: [
-      { name: "Rajesh K.", title: "Verified Buyer from Hyderabad", stars: 5, text: "I put them on and immediately felt like I had climbed something. Maybe the stairs? 10/10 would buy again." },
-      { name: "Priya S.", title: "Lifestyle Enthusiast", stars: 5, text: "The smell is not a defect, it is a feature. My therapist agrees this was not a healthy purchase but I feel alive." },
-      { name: "Anonymous", title: "Repeat Customer", stars: 4, text: "One sock is slightly more used than the other. Gave 4 stars because the asymmetry bothers me spiritually." }
+      { name: "Sanya D.", title: "Verified Buyer from Delhi", stars: 5, text: "The lean is real. The bag tilts into my shoulder like it needs me. My other bags are jealous and symmetrical." },
+      { name: "Ergonomist Vivek", title: "Posture Professional", stars: 4, text: "Medically, this bag is ruining her spine. Emotionally, I understand why she won't stop carrying it. 4 stars." }
     ]
   },
   {
-    id: 2, name: "Half-Eaten Roti", tagline: "Artisanal flatbread, quality-tested by artisan",
-    story: "Handcrafted on a traditional tawa by artisan Ramesh ji, who has been making rotis for 40 years. He ate the other half personally to ensure quality. It passed. You get this half.",
-    img: IMGS.CUP, mrp: 15000, price: 7499, category: "Food & Beverage",
-    sustainability: "Carbon Footprint: Flour was imported by helicopter",
-    specs: { Material: "Whole wheat, hand-rolled", Condition: "50% present", Durability: "48 hours (unrefrigerated)" },
+    id: 2, name: "Journal With Pages Glued Shut", tagline: "Handbound. Aggressively private.",
+    story: "The binding artisan was going through a difficult week and used triple the glue. Result: a beautiful handmade journal where pages 12 through 84 open for no one. EKATRA called it unsellable. We call it the world's most secure diary. Your secrets are safe because even YOU can't access them.",
+    img: IMGS.LEATHER, mrp: 12000, price: 5999, category: "QC Failed",
+    sustainability: "Rejection Reason: Excess glue (the artisan's feelings were also glued)",
+    specs: { Binding: "Hand-stitched + emotional glue", "Usable Pages": "11 of 96", Privacy: "Military grade", Opens: "Rarely" },
     reviews: [
-      { name: "Sunita M.", title: "Food Connoisseur", stars: 5, text: "The bite marks add character. I framed it. My family is concerned. I am not." },
-      { name: "Chef Amit", title: "Professional Chef", stars: 5, text: "Ramesh ji's technique is visible in every edge. The part he ate was probably the better half, but this half has grief, which is also flavour." }
+      { name: "Writer Aditi", title: "Novelist (Unpublished)", stars: 5, text: "I wrote my novel on the 11 working pages. It made me concise. My editor says it's my best work. The glue is my co-author." },
+      { name: "Secretive Sameer", title: "Private Person", stars: 5, text: "I told the journal everything before realising the pages don't open. Perfect. Even the journal doesn't know my secrets now." }
     ]
   },
   {
-    id: 3, name: "Broken Earbud (Left Only)", tagline: "Minimalist single-ear audio journey",
-    story: "The right earbud achieved moksha during a particularly intense Lata Mangeshkar session in 2021. This one is still on its spiritual journey. Volume controls may or may not work — that is for the universe to decide.",
-    img: IMGS.STRAW, mrp: 8000, price: 3999, category: "Electronics",
-    sustainability: "Right earbud thrown into ocean (halved your guilt)",
-    specs: { Material: "Plastic & existential dread", Condition: "Functionally ambiguous", Durability: "Until enlightenment" },
+    id: 3, name: "Upcycled Pouch (Zip Not Included)", tagline: "The zip is a social construct.",
+    story: "A gorgeous block-printed pouch that reached the final assembly station on the exact day the zip supplier stopped answering calls. EKATRA shelved the whole batch. We liberated them. Contents will escape. Coins will leave. Pens will find freedom. And you? You will learn to let go. That is the product.",
+    img: IMGS.BAGS, mrp: 6000, price: 2999, category: "Sample Reject",
+    sustainability: "Rejection Reason: Zipless (the supplier ghosted, the pouch pays the price)",
+    specs: { Fabric: "Block-printed cotton, upcycled", Closure: "Hope", "Retention Rate": "60% of contents", Philosophy: "Detachment" },
     reviews: [
-      { name: "Vikram T.", title: "Audiophile", stars: 5, text: "I only needed my left ear anyway. The right was just noise. This purchase has brought clarity in more ways than one." },
-      { name: "Music Lover 99", title: "Power User", stars: 4, text: "Plays only certain frequencies. Specifically the frequencies of regret and lo-fi beats. Perfect for my lifestyle." }
+      { name: "Minimalist Manav", title: "Owns 14 Things", stars: 5, text: "Everything I put in it eventually leaves. My possessions have never been fewer. This pouch is my guru." },
+      { name: "Rhea K.", title: "Lost Her Keys", stars: 3, text: "Beautiful fabric. Lost my house keys within 2 hours. Currently writing this from outside my house. 3 stars, would panic again." }
     ]
   },
   {
-    id: 4, name: "Empty Shampoo Bottle", tagline: "Zero waste vessel, formerly useful",
-    story: "This bottle once contained premium shampoo sourced from the hills of Shimla. We kept the shampoo. You get the bottle. Zero waste. The residue at the bottom is complimentary and may or may not lather.",
-    img: IMGS.PLASTIC_FLOAT, mrp: 12000, price: 5999, category: "Wellness",
-    sustainability: "Bottle will outlive your grandchildren (proudly)",
-    specs: { Material: "High-density polyethylene", Condition: "Empty (mostly)", Durability: "Centuries" },
+    id: 4, name: "Fabric Swatch (Just The Swatch)", tagline: "This is what they make bags from. We sell the potential.",
+    story: "A 15×15cm square of hand-loomed fabric that was supposed to become something. A bag, maybe. A pouch. A life. It never got the chance — the design was discontinued in a meeting that lasted 11 minutes. We sell it exactly as it is: pure, unrealised potential. Frame it. Cry into it. Become it.",
+    img: IMGS.SCARF, mrp: 4000, price: 1999, category: "Discontinued",
+    sustainability: "Rejection Reason: Design killed in a meeting (the fabric survived, barely)",
+    specs: { Size: "15 × 15 cm", Status: "Unrealised", "Was Meant To Be": "Unknown (records sealed)", Softness: "Devastating" },
     reviews: [
-      { name: "Ananya B.", title: "Zero Waste Influencer", stars: 5, text: "The residue lasted me 3 washes. Then I just filled it with water and called it homeopathic shampoo. Hair feels hopeful." },
-      { name: "R. Sharma", title: "Home Décor Blogger", stars: 5, text: "I display it on my bathroom shelf. Guests think I use expensive products. I do, technically. I just don't have any left." }
+      { name: "Corporate Kunal", title: "Also Unrealised Potential", stars: 5, text: "I keep it on my desk. When my manager cancels my projects, I touch the swatch. We understand each other." },
+      { name: "Interior Stylist Poo", title: "Vision Haver", stars: 5, text: "I framed it and told guests it's conceptual textile art from a discontinued atelier line. Nobody has questioned it. Nobody ever will." }
     ]
   },
   {
-    id: 5, name: "Nail Clippings (10g)", tagline: "Ethically sourced keratin collectible",
-    story: "Meticulously collected from our CEO, Vikram ji, during a particularly long board meeting on Q3 projections. Organic. Free-range. Never touched the floor. Presented in a handwoven cloth pouch made by artisans who had no idea what they were making.",
-    img: IMGS.ZIPTIE, mrp: 99000, price: 49500, category: "Collectibles",
-    sustainability: "100% biodegradable (eventually, in 200 years)",
-    specs: { Source: "CEO, Board Meeting Q3", Weight: "10 grams", Certification: "Ethically Unverified" },
+    id: 5, name: "Bookmark, Slightly Torn", tagline: "Rescued from their dustbin. Literally.",
+    story: "A handmade paper bookmark with a hand-pressed flower, torn 2cm from the top during what witnesses describe as 'aggressive quality checking'. It was in the dustbin for 40 minutes before our founder — who was in the building collecting his belongings — rescued it. It marked the page of his old employment contract for 6 months. Now it can mark yours.",
+    img: IMGS.CARDBOARD, mrp: 3000, price: 1499, category: "Dustbin Rescue",
+    sustainability: "Rejection Reason: 2cm tear (the flower is fine, thanks for asking)",
+    specs: { Material: "Handmade paper + pressed flower", Tear: "2cm, characterful", "Time In Dustbin": "40 minutes", Provenance: "Founder's own hands" },
     reviews: [
-      { name: "NFT Collector Arun", title: "Digital-Physical Art Enthusiast", stars: 5, text: "I verified the provenance. These are definitely from a CEO. The confidence embedded in the keratin is palpable." },
-      { name: "Dr. Neha P.", title: "Wellness Practitioner", stars: 5, text: "I grind them into a tincture and sell it as ambition powder. My clients are thriving." }
+      { name: "Book Lover Bhavna", title: "Reads 60 Books a Year", stars: 5, text: "The tear points at whatever line I stopped on, like an arrow of judgment. My reading comprehension has improved out of fear." },
+      { name: "Archivist Anand", title: "Preservation Enthusiast", stars: 4, text: "Historically significant. The tear is dated to the exact week of the founder's expulsion. This is a relic. I have insured it." }
     ]
   },
   {
-    id: 6, name: "Used Toothbrush", tagline: "Pre-loved oral wellness companion",
-    story: "Three months of morning discipline, late night excuses, and one dentist visit that we do not discuss. Bristles are artfully bent — a sign of character, not neglect. Mint-adjacent fragrance. Pre-loved wellness at its finest.",
-    img: IMGS.RUBBER, mrp: 20000, price: 9999, category: "Wellness",
-    sustainability: "Bristles will exist until 2847",
-    specs: { Material: "Nylon bristles", Condition: "3 months of stories", Fragrance: "Mint-adjacent" },
+    id: 6, name: "Diary Bound Upside Down", tagline: "For thoughts that were already going downhill.",
+    story: "A production run of 200 diaries where the cover was bound upside down relative to the pages. EKATRA pulped 199 of them. One escaped in a tote bag (see product #1, the handles made it easy to snatch). To use it, you either flip the diary or flip your worldview. We recommend the second option. It's also non-returnable either way.",
+    img: IMGS.TOTE_DETAIL, mrp: 10000, price: 4999, category: "Sole Survivor",
+    sustainability: "Rejection Reason: Upside down (199 siblings were pulped — pour one out)",
+    specs: { Orientation: "Incorrect (or is it)", Edition: "1 of 1 (survivor)", Pages: "Right way up, technically", Grief: "Included" },
     reviews: [
-      { name: "Kavitha R.", title: "Oral Wellness Coach", stars: 5, text: "The bend of the bristles tells a story of someone who pressed too hard but meant well. I resonated deeply." },
-      { name: "Anonymous (Dentist)", title: "Medical Professional", stars: 1, text: "I cannot ethically endorse this. But I understand the appeal. 1 star professionally. 5 stars personally." }
+      { name: "Yoga Teacher Ira", title: "Inversion Specialist", stars: 5, text: "I journal in headstand. For me this diary is the only correctly bound diary ever made. Namaste to the distracted artisan." },
+      { name: "Collector Raghav", title: "Rarity Investor", stars: 5, text: "One of one. The other 199 are pulp. This is rarer than most luxury watches. I have not written in it. I wear gloves to open it." }
     ]
   },
   {
-    id: 7, name: "A Brick", tagline: "Sustainably sourced architectural fragment",
-    story: "Responsibly salvaged from a building that was demolished to make a parking lot. Full of history, memories, and possibly asbestos (unverified). Can be used as a doorstop, paperweight, or reminder of impermanence.",
-    img: IMGS.CARDBOARD, mrp: 250000, price: 125000, category: "Home Décor",
-    sustainability: "Building demolished to make parking lot. Very green.",
-    specs: { Material: "Fired clay (possibly asbestos)", Weight: "2.5 kg", Origin: "Demolished school, 2023" },
+    id: 7, name: "Coaster Set (3 of 4)", tagline: "The fourth one is living its best life somewhere.",
+    story: "A set of four hand-quilted coasters. The fourth coaster fell off a delivery bike near Aundh and was last seen being used confidently by a roadside chai stall. EKATRA refused to sell an incomplete set. We refuse to let bureaucracy define completeness. Three coasters. Infinite spirit. The chai stall is thriving, by the way. We checked.",
+    img: IMGS.RUBBER, mrp: 5000, price: 2499, category: "Incomplete Set",
+    sustainability: "Rejection Reason: 75% complete (the missing 25% is serving society)",
+    specs: { Quantity: "3 (physically), 4 (spiritually)", Material: "Quilted upcycled fabric", "Fourth Coaster": "Aundh chai stall (confirmed sighting)", Completeness: "A mindset" },
     reviews: [
-      { name: "Interior Designer Mona", title: "Décor Professional", stars: 5, text: "I placed it in the centre of my living room and called it 'The Anchor'. My clients pay extra to touch it." },
-      { name: "Philosopher Arjun", title: "Amateur Existentialist", stars: 5, text: "I stare at it every morning. It was once a wall. Now it is a paperweight. Is that not all of us?" }
+      { name: "Host Harsha", title: "Dinner Party Person", stars: 5, text: "When a fourth guest arrives, I simply tell them the story. They hold their hot cup and listen. Nobody has complained. The story IS the coaster." },
+      { name: "The Chai Stall (via customer)", title: "Unofficial Fourth Owner", stars: 5, text: "Bhaiya's stall has the missing coaster under the sugar jar. It has found purpose. Sometimes destiny is a delivery bike taking a sharp turn." }
     ]
   },
   {
-    id: 8, name: "Neighbour's Dog Hair (50g)", tagline: "Free-range artisanal fur, hand-harvested",
-    story: "Artisanally collected from Sharmaji's sofa over three patient visits. Bruno is a 4-year-old Labrador with a rich coat and zero awareness of personal boundaries. His hair is organically sourced, non-GMO, and slightly muddy.",
-    img: IMGS.BAGS, mrp: 75000, price: 37999, category: "Collectibles",
-    sustainability: "Bruno's carbon pawprint is entirely his problem",
-    specs: { Source: "Sharmaji's Labrador, Bruno", Weight: "50 grams", Condition: "Slightly muddy" },
+    id: 8, name: "Sling Bag, Strap Sewn Inside", tagline: "A bag that hugs itself. Relatable.",
+    story: "The strap was sewn INTO the bag instead of onto it. The bag technically contains its own method of being carried, which is either a manufacturing error or a profound statement on self-reliance. EKATRA said error. Our founder, who at the time also contained his own means of moving forward but couldn't access them, said statement. You decide. (It's a statement.)",
+    img: IMGS.HERO, mrp: 9000, price: 4499, category: "QC Failed",
+    sustainability: "Rejection Reason: Introverted strap (it needs time, not judgment)",
+    specs: { Strap: "Present (inside)", "Carry Method": "Clutch it like your dreams", Symbolism: "Heavy", Repairable: "Yes, but why would you" },
     reviews: [
-      { name: "Dog Person Geeta", title: "Canine Enthusiast", stars: 5, text: "I can feel Bruno's energy in every strand. His hair is extraordinary. I have requested a sofa bundle as well." },
-      { name: "Sharmaji", title: "Verified Source", stars: 2, text: "No one asked me. But Bruno seems happy about it. 2 stars because I would have charged more." }
+      { name: "Therapist Nandini", title: "Mental Health Professional", stars: 5, text: "I show this bag to clients who struggle with self-containment. Sessions have improved. The bag does more than I do some weeks." },
+      { name: "Fashion Week Reject Dev", title: "Style Visionary", stars: 5, text: "I carried it clutched to my chest at a wedding. Three people asked where I got it. One cried. This is what fashion is supposed to do." }
     ]
   },
   {
-    id: 9, name: "Plastic Straws (1000 Pack)", tagline: "Save the oceans. Probably. We think.",
-    story: "Each straw in this pack is a tiny cry for help from the planet. But if YOU buy them, they won't end up in the ocean. They'll end up in your drawer. For 400 years. You're basically an environmentalist now.",
-    img: IMGS.BAGS, mrp: 5000, price: 2499, category: "Sustainability",
-    sustainability: "Projected ocean entry: 2027 (after you lose them)",
-    specs: { Quantity: "1000 straws", Material: "Virgin plastic", Durability: "400 years minimum" },
+    id: 9, name: "Notebook Cover (Notebook Not Included)", tagline: "Commitment issues, bound in fabric.",
+    story: "A hand-embroidered fabric notebook cover whose notebooks were never manufactured — the paper vendor and EKATRA had 'creative differences' (money). So the covers sat in a warehouse, protecting nothing, like bodyguards for an idea. Buy one. Put it around any notebook. Or nothing. Protect your nothing beautifully.",
+    img: IMGS.PLASTIC_FLOAT, mrp: 7000, price: 3499, category: "Orphaned Stock",
+    sustainability: "Rejection Reason: Contents never existed (a cover-up, literally)",
+    specs: { Material: "Embroidered upcycled fabric", Fits: "A5 notebooks, dreams", Contents: "Sold separately, elsewhere, by someone else", Warmth: "Considerable" },
     reviews: [
-      { name: "Eco Warrior Tanvi", title: "Environmental Activist", stars: 5, text: "I bought all 1000. They are in my garage. I have saved them from the ocean. The ocean texted to say thank you." },
-      { name: "Pragmatic Pete", title: "Realist", stars: 4, text: "I used 3, lost track of 997. But those 997 are definitely still in my house. Saving something." }
+      { name: "Startup Founder Jay", title: "Pre-Revenue Visionary", stars: 5, text: "It's a cover with no product inside. As a startup founder, I have never related to an object more. It sits on my desk as a mirror." },
+      { name: "Gifter Grandma Usha", title: "Gives Practical Gifts", stars: 4, text: "I gifted it with a notebook inside from another brand. My granddaughter never knew. 4 stars for making me a liar at 71." }
     ]
   },
   {
-    id: 10, name: "Old Newspaper (2012)", tagline: "Vintage journalism, aged to confusion",
-    story: "Recovered from under a mattress in Kolkata. Contains news that was shocking in 2012 and confusing now. The crossword is 60% filled in with wrong answers by someone named 'P.K. Mehta' who was very confident about 7-Across.",
-    img: IMGS.LEATHER, mrp: 18000, price: 8999, category: "Collectibles",
-    sustainability: "Trees died for this. We honour them by selling it twice.",
-    specs: { Date: "2012 (exact date redacted)", Condition: "Yellowed, historically incorrect", Crossword: "60% wrong" },
+    id: 10, name: "Loose Threads Bundle (100g)", tagline: "Every bag they ever made left these behind.",
+    story: "Swept from the workshop floor: 100 grams of thread ends, offcuts, and one full tassel of unknown origin. This is the DNA of every beautiful thing EKATRA ever produced — the part they threw away. Sound familiar? It did to us. We put it in a jar. The jar is not included. Neither is closure.",
+    img: IMGS.ZIPTIE, mrp: 3500, price: 1799, category: "Floor Sweepings",
+    sustainability: "Rejection Reason: Considered 'waste' (so was our founder)",
+    specs: { Weight: "100 grams", Contents: "Thread ends, offcuts, 1 mystery tassel", Origin: "Workshop floor, swept Tuesdays", Metaphor: "Yes" },
     reviews: [
-      { name: "Historian Ritu", title: "Amateur Archivist", stars: 5, text: "P.K. Mehta's confidence in 7-Across is genuinely inspiring. He was wrong but he committed. Life goals." },
-      { name: "Crossword Enthusiast", title: "Puzzle Solver", stars: 5, text: "I finished the crossword. P.K. Mehta was wrong about everything except 14-Down, which is remarkable." }
+      { name: "Craft Mom Deepa", title: "Makes Things From Things", stars: 5, text: "I made a small friendship bracelet from the threads. Wearing the rejected fibres of a brand that rejects people. My most political accessory." },
+      { name: "Poet Ashwin", title: "Finds Meaning Everywhere", stars: 5, text: "I have written 14 poems about the mystery tassel. Where did it come from? What was it part of? We may never know. Like life." }
     ]
   },
   {
-    id: 11, name: "Aloo Paratha Recipe (Wrong)", tagline: "Handwritten. Deliberately incorrect.",
-    story: "Handwritten by Dadi on a flight from Amritsar in 1987. She deliberately left out 3 crucial steps because, as she said, 'If I tell you everything, what will you need me for?' The recipe will not work. That is the point.",
-    img: IMGS.SCARF, mrp: 30000, price: 14999, category: "Food & Beverage",
-    sustainability: "Paper sourced from a tree that had it coming",
-    specs: { Author: "Dadi (Amritsar, 1987)", Completeness: "Missing 3 steps", Accuracy: "Intentionally low" },
+    id: 11, name: "Blank Price Tag (Theirs)", tagline: "The product sold. The tag remains. Aspirational.",
+    story: "A genuine handmade-paper price tag, string intact, price never written. The product it was destined for sold out before tagging. The tag has spent two years experiencing what philosophers call 'purpose deferred'. Tie it to anything you own and write your own price. Your chappal is now ₹40,000. Your water bottle: priceless. This is manifestation, but with stationery.",
+    img: IMGS.STRAW, mrp: 2000, price: 999, category: "Orphaned Stock",
+    sustainability: "Rejection Reason: Nothing left to tag (a tag without purpose, sold by people without shame)",
+    specs: { Material: "Handmade paper + jute string", "Price Field": "Blank (your move)", Purpose: "Deferred", Power: "Unlimited" },
     reviews: [
-      { name: "Homesick Nikhil", title: "NRI Customer", stars: 5, text: "I followed the recipe. It failed. I cried. Then I called Dadi. That was her plan all along. Genius." },
-      { name: "Chef Rajan", title: "Professional Cook", stars: 4, text: "The missing steps are obvious to an expert but the handwriting is beautiful and the margins have clouds." }
+      { name: "Manifestor Mansi", title: "Vision Board Owner", stars: 5, text: "I tied it to my old scooter and wrote ₹3,00,000. A man offered me ₹80,000 the next day. The tag WORKS. Buy several." },
+      { name: "Economist Dr. Rao", title: "Actual Economist", stars: 2, text: "This is not how pricing works. However, I have tied one to my thesis and written 'seminal'. Citations pending. 2 stars, ask me again next year." }
     ]
   },
   {
-    id: 12, name: "A Single Ice Cube", tagline: "Temporary luxury. Eternal memory.",
-    story: "Frozen at 11:47 PM on a Tuesday using filtered water from a flat in Bandra. By the time it reaches you, it will be water. Or memory. Or both. We ship in a box with no insulation because the journey is the product.",
-    img: IMGS.TOTE_DETAIL, mrp: 45000, price: 22500, category: "Experiences",
-    sustainability: "Ships in 12 layers of styrofoam. For nothing.",
-    specs: { Origin: "Bandra flat, Tuesday 11:47 PM", State: "Liquid (upon arrival)", Packaging: "No insulation (deliberate)" },
-    reviews: [
-      { name: "Philosopher Kedar", title: "Mindfulness Coach", stars: 5, text: "It arrived as water. I drank it. The Bandra energy was unmistakable. I feel cooler as a person now." },
-      { name: "Disappointed Diya", title: "Literal Thinker", stars: 1, text: "I expected ice. I got a wet box and an emotion. I understand now. Still disappointed. Still kept the water." }
-    ]
-  },
-  {
-    id: 13, name: "Used Plastic Bag", tagline: "Buy it. The ocean will thank you. We think.",
-    story: "This bag has carried groceries, emotions, and once — a very confused cat. By purchasing this bag, you ensure it does NOT enter the ocean. We will ship it to you in three new plastic bags, a bubble wrap envelope, and a styrofoam box. For the environment.",
-    img: IMGS.TOTE_RED, mrp: 10000, price: 4999, category: "Sustainability",
-    sustainability: "Ships in more plastic than it displaces. Net neutral? No.",
-    specs: { Condition: "Pre-used, emotionally loaded", "Previous Contents": "Groceries + one confused cat", "Eco Impact": "Negative (net)" },
-    reviews: [
-      { name: "Ocean Protector Meena", title: "Marine Conservationist", stars: 5, text: "I bought 12 bags to save them from the ocean. The packaging had 47 new plastic pieces. I am choosing not to do the math." },
-      { name: "The Cat (via owner)", title: "Confused Pet", stars: 3, text: "Smells familiar. Confusing. Neither good nor bad. Like most things in life. 3 stars." }
-    ]
-  },
-  {
-    id: 14, name: "A4 20% Filled Journal", tagline: "Aishwarya's unreturned property. Now yours.",
+    id: 12, name: "A4 20% Filled Journal", tagline: "Aishwarya's unreturned property. Now yours.",
     story: "This journal was quietly liberated from Aishwarya's office during a particularly boring quarterly review. The first 20% is filled with her handwritten thoughts — strategic frameworks, unsolicited life advice, a grocery list that inexplicably includes 'clarity of purpose'. We kept the remaining 80% blank because frankly, Aishwarya's existing energy should be enough to fill the rest. The journal itself cost ₹500. Aishwarya's insights? Incalculable. We're charging ₹1,999 and honestly you're robbing us.",
-    img: "./journal-cover.jpg", mrp: 14999, price: 1999, category: "Stationery",
+    img: "./journal-cover.jpg", mrp: 14999, price: 1999, category: "Stolen From Office",
     sustainability: "A tree died. Aishwarya's thoughts gave it meaning. Barely.",
     specs: { Size: "A4 (210 × 297 mm)", "Fill Level": "20% (Aishwarya's handwriting)", Binding: "Double spiral, gold wire", Pages: "80% blank — your existential crisis to fill", Cover: "Orange & pink stripes (very loud, like her opinions)" },
     reviews: [
@@ -205,7 +184,7 @@ function updateCartBadge() {
 function showToast(message) {
   let toast = document.getElementById('toast');
   if (!toast) { toast = document.createElement('div'); toast.id = 'toast'; document.body.appendChild(toast); }
-  toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#00232f;color:white;padding:14px 24px;font-size:13px;z-index:1000;font-family:Manrope,sans-serif;letter-spacing:0.05em;transition:opacity 0.3s;max-width:320px;';
+  toast.style.cssText = 'position:fixed;bottom:24px;right:24px;background:#af101a;color:white;padding:14px 24px;font-size:13px;z-index:1000;font-family:Inter,sans-serif;letter-spacing:0.05em;transition:opacity 0.3s;max-width:320px;';
   toast.textContent = message;
   toast.style.opacity = '1';
   clearTimeout(toast._t);

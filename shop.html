@@ -104,7 +104,7 @@ tailwind.config = {
     </div>
     <div class="bg-inverse-surface p-8 text-white space-y-4">
       <p class="font-headline font-black uppercase text-xl tracking-tighter italic">Statement Piece</p>
-      <p class="font-body text-xs leading-relaxed opacity-60 uppercase tracking-widest">Filters are decorative. All 14 items will always appear. We do not believe in curation.</p>
+      <p class="font-body text-xs leading-relaxed opacity-60 uppercase tracking-widest">Filters are decorative. All 12 items will always appear. We do not believe in curation.</p>
     </div>
   </aside>
 
@@ -112,9 +112,9 @@ tailwind.config = {
   <div class="flex-grow">
     <div class="mb-16">
       <h1 class="font-headline text-7xl md:text-9xl font-black text-primary uppercase leading-[0.85] tracking-tighter">High-Priced<br/>Absurdities</h1>
-      <p class="mt-4 font-body uppercase tracking-[0.3em] text-secondary text-sm">Volume 04: The Cost of Existing · 14 Objects</p>
+      <p class="mt-4 font-body uppercase tracking-[0.3em] text-secondary text-sm">Volume 05: The Rejected Collection · 12 Objects</p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-32 gap-x-12" id="shop-grid"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8" id="shop-grid"></div>
   </div>
 </section>
 
@@ -144,7 +144,7 @@ tailwind.config = {
   const grid = document.getElementById('shop-grid');
   grid.innerHTML = PRODUCTS.map((p, i) => {
     const d = getDiscount(p.mrp, p.price);
-    const offset = i % 2 === 1 ? 'lg:mt-40' : '';
+    const offset = '';
     return `
       <div class="group relative ${offset}">
         <a href="product.html?id=${p.id}" class="block aspect-[4/5] bg-surface-container-highest overflow-hidden relative">
