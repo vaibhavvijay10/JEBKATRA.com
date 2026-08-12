@@ -68,7 +68,10 @@ tailwind.config = {
   </div>
   <!-- RIGHT: IMAGE -->
   <div class="relative min-h-[60vh] md:min-h-screen overflow-hidden bg-surface-container">
-    <img id="founder-story-img" alt="The Founder" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 absolute inset-0"/>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="font-headline italic font-black text-primary/15 text-[12rem] select-none">VV</span>
+    </div>
+    <img id="founder-story-img" alt="The Founder" onerror="this.remove()" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 absolute inset-0"/>
     <div class="absolute bottom-8 left-8 bg-primary text-white px-4 py-2 font-body text-[10px] uppercase tracking-[0.2em]">Est. Post-Betrayal</div>
   </div>
 </section>
