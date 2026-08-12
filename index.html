@@ -56,28 +56,54 @@ tailwind.config = {
   </nav>
 </header>
 
-<!-- HERO — solid red, full bleed -->
-<section class="relative w-full min-h-screen bg-primary flex flex-col justify-between px-8 md:px-16 pt-16 pb-16 md:pb-24 overflow-hidden">
-  <div class="flex justify-between items-start">
+<!-- HERO — red, split with founder polaroid -->
+<section class="relative w-full min-h-screen bg-primary flex flex-col justify-between px-8 md:px-16 pt-12 pb-16 overflow-hidden">
+  <!-- Giant ghost word behind everything -->
+  <span aria-hidden="true" class="absolute -bottom-8 left-0 right-0 font-serif italic font-black text-white/[0.06] text-[22vw] leading-none whitespace-nowrap select-none pointer-events-none tracking-tighter">REJECTED</span>
+
+  <div class="flex justify-between items-start relative z-10">
     <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40">Manifesto No. 0042</span>
     <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40 hidden md:block">Est. Post-Betrayal · Pune</span>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-end mt-12 md:mt-0">
-    <!-- Headline -->
-    <h1 class="font-serif font-black text-white text-5xl md:text-7xl lg:text-8xl xl:text-9xl leading-[0.88] tracking-tighter">
-      Sustainability<br/>is for people<br/>who haven't<br/>seen our<br/>prices.
-    </h1>
-    <!-- Right side -->
-    <div class="flex flex-col justify-end gap-8 pb-2">
-      <p class="font-sans text-white/70 text-sm leading-relaxed max-w-xs">
-        We don't sell products. We sell reasons to explain why your bank account is empty. Our luxury is intentionally unsustainable.
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-center mt-10 md:mt-0 relative z-10">
+    <!-- Headline + copy -->
+    <div class="md:col-span-7 flex flex-col gap-8">
+      <h1 class="font-serif font-black text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.88] tracking-tighter">
+        They rejected<br/>the products.<br/>They rejected<br/><span class="italic">me.</span><br/>We're both for sale now.
+      </h1>
+      <p class="font-sans text-white/70 text-sm leading-relaxed max-w-sm">
+        Every item here failed EKATRA's quality check. So did our founder. One brand's dustbin is another brand's entire inventory.
       </p>
-      <div>
-        <a href="shop.html" class="inline-block border-2 border-white text-white font-sans font-bold uppercase tracking-[0.2em] text-sm px-10 py-4 hover:bg-white hover:text-primary transition-colors">
-          Spend More Now
+      <div class="flex flex-wrap items-center gap-6">
+        <a href="shop.html" class="inline-block bg-white text-primary font-sans font-black uppercase tracking-[0.2em] text-sm px-10 py-4 hover:bg-[#1a1a1a] hover:text-white transition-colors">
+          Shop the Rejects
+        </a>
+        <a href="about.html" class="font-sans text-white/70 uppercase tracking-[0.2em] text-xs underline underline-offset-8 decoration-white/30 hover:text-white transition-colors">
+          Read the Betrayal
         </a>
       </div>
     </div>
+
+    <!-- Founder polaroid -->
+    <div class="md:col-span-5 flex justify-center md:justify-end">
+      <div class="relative rotate-3 hover:rotate-0 transition-transform duration-500">
+        <div class="bg-white p-4 pb-16 shadow-[0_30px_60px_rgba(0,0,0,0.35)] w-64 md:w-80">
+          <img src="./founder.jpg" alt="Vaibhav Vijay — Founder, JEBKATRA" class="w-full aspect-[4/5] object-cover"/>
+          <p class="absolute bottom-5 left-0 right-0 text-center font-serif italic text-[#1a1a1a] text-lg">Vaibhav Vijay — fired. inspired.</p>
+        </div>
+        <!-- Stamp -->
+        <div class="absolute -top-5 -right-7 -rotate-12 border-4 border-[#1a1a1a] text-[#1a1a1a] bg-white/80 px-4 py-2 font-sans font-black uppercase tracking-[0.15em] text-xs text-center leading-tight">
+          Rejected by EKATRA<br/>Embraced by Capitalism
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="relative z-10 flex justify-between items-end mt-10">
+    <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40">12 Objects · 0 Apologies</span>
+    <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-white/40 hidden md:block">Scroll for Regret ↓</span>
   </div>
 </section>
 
