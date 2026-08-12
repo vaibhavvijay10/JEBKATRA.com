@@ -102,7 +102,12 @@ tailwind.config = {
               </g>
               <text x="200" y="465" text-anchor="middle" fill="#ffffff" font-family="Georgia, serif" font-style="italic" font-size="16" opacity="0.7">the hair is accurate</text>
             </svg>
-            <img src="./founder.jpg" alt="Vaibhav Vijay — Founder, JEBKATRA" onerror="this.remove()" class="absolute inset-0 w-full h-full object-cover"/>
+            <img src="./founder.jpg" alt="Vaibhav Vijay — Founder, JEBKATRA" onerror="this.remove(); document.getElementById('founder-horns').remove();" class="absolute inset-0 w-full h-full object-cover"/>
+            <!-- Devil horns — EKATRA's official courtroom sketch addition -->
+            <svg id="founder-horns" viewBox="0 0 400 500" class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M118 118 C104 84 100 52 112 22 C130 50 144 82 146 112 C136 118 126 120 118 118 Z" fill="#af101a" stroke="#7a0b12" stroke-width="4"/>
+              <path d="M282 118 C296 84 300 52 288 22 C270 50 256 82 254 112 C264 118 274 120 282 118 Z" fill="#af101a" stroke="#7a0b12" stroke-width="4"/>
+            </svg>
           </div>
           <p class="absolute bottom-6 left-0 right-0 text-center font-serif italic text-[#1a1a1a] text-lg md:text-xl">Vaibhav Vijay — fired. inspired.</p>
         </div>
