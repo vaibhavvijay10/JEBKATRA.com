@@ -21,25 +21,36 @@ const IMGS = {
 // Every item was deemed "not good enough" by them. We disagree. We also raised the price.
 const PRODUCTS = [
   {
-    id: 1, name: "Tote Bag (One Handle Shorter)", tagline: "QC rejected. We call it asymmetric couture.",
-    story: "Hand-stitched from upcycled fabric by an artisan who was distracted at a crucial moment. EKATRA's quality team measured the handles, sighed, and threw it in the reject bin. We fished it out. One handle is 4cm shorter — which means the bag leans towards you, affectionately. They saw a defect. We see a bag that loves you back.",
-    img: IMGS.TOTE_RED, mrp: 799, price: 499, category: "QC Failed",
-    sustainability: "Rejection Reason: Handle asymmetry, 4cm (unforgivable, apparently)",
-    specs: { Material: "Upcycled cotton, genuine", "Handle Delta": "4 centimetres", Source: "EKATRA reject bin, Row 3", Lean: "Towards you (emotional)" },
+    id: 1, name: "Abdul Rahman, Official Mascot", tagline: "The official mascot of jebkatra.in. Eyes closed. Judging you anyway.",
+    story: "Meet Abdul Rahman, the official mascot of jebkatra.in. He has sat beside the founder since the day of the firing, eyes shut, beak raised, refusing to comment. Analysts call it a power pose. Abdul calls it a nap. He has never once asked for an appraisal, which makes him our most valuable employee. He is now available for adoption, at a price that reflects his seniority.",
+    img: "./product-abdul-rahman.jpg", mrp: 99999, price: 49999, category: "Official Mascot",
+    sustainability: "Rejection Reason: None. Abdul rejected EKATRA first.",
+    specs: { Species: "Penguin (plush, emotionally reinforced)", Designation: "Official Mascot, jebkatra.in", Eyes: "Closed (strategically)", Experience: "Present since Day 1 of the betrayal", Salary: "Hugs, non-negotiable" },
     reviews: [
-      { name: "Sanya D.", title: "Verified Buyer from Delhi", stars: 5, text: "The lean is real. The bag tilts into my shoulder like it needs me. My other bags are jealous and symmetrical." },
-      { name: "Ergonomist Vivek", title: "Posture Professional", stars: 4, text: "Medically, this bag is ruining her spine. Emotionally, I understand why she won't stop carrying it. 4 stars." }
+      { name: "Investor Kabir", title: "Angel Investor, Koramangala", stars: 5, text: "I came for the journal. I stayed for Abdul. Brand mascots usually cost crores. This one costs ₹49,999 and sleeps through board meetings. Undervalued." },
+      { name: "Aishwarya", title: "Former Colleague (of Abdul)", stars: 1, text: "Abdul was in the office first. Abdul was not his to take. Abdul, if you are reading this, blink twice." }
     ]
   },
   {
-    id: 2, name: "Journal With Pages Glued Shut", tagline: "Handbound. Aggressively private.",
-    story: "The binding artisan was going through a difficult week and used triple the glue. Result: a beautiful handmade journal where pages 12 through 84 open for no one. EKATRA called it unsellable. We call it the world's most secure diary. Your secrets are safe because even YOU can't access them.",
-    img: IMGS.LEATHER, mrp: 599, price: 399, category: "QC Failed",
-    sustainability: "Rejection Reason: Excess glue (the artisan's feelings were also glued)",
-    specs: { Binding: "Hand-stitched + emotional glue", "Usable Pages": "11 of 96", Privacy: "Military grade", Opens: "Rarely" },
+    id: 2, name: "Three Highlighters With Superpowers", tagline: "They don't highlight text. They highlight your life.",
+    story: "Pink, purple and orange. Three highlighters that once marked the important lines in EKATRA's strategy documents, until someone realised they were highlighting the wrong things. Now retired from office work, they have discovered their real purpose: making you the highlight of every room. Uncap one and the people around you become slightly fluorescent with envy. Uncap all three and we are not responsible.",
+    img: "./product-highlighters.jpg", mrp: 29999, price: 14999, category: "Superpowers",
+    sustainability: "Rejection Reason: Highlighted too much truth in one meeting",
+    specs: { Quantity: "3 (pink, purple, orange)", Power: "Turns ordinary days into highlights", "Ink Level": "Enough for one life-changing moment each", "Previous Employer": "EKATRA, strategy team", Warning: "Do not uncap near your ex" },
     reviews: [
-      { name: "Writer Aditi", title: "Novelist (Unpublished)", stars: 5, text: "I wrote my novel on the 11 working pages. It made me concise. My editor says it's my best work. The glue is my co-author." },
-      { name: "Secretive Sameer", title: "Private Person", stars: 5, text: "I told the journal everything before realising the pages don't open. Perfect. Even the journal doesn't know my secrets now." }
+      { name: "Topper Tanvi", title: "Board Exam Survivor", stars: 5, text: "I highlighted one line of my textbook with the orange one and got 98%. I highlighted my crush's name with the pink one and he texted back. The purple one I am saving for marriage." },
+      { name: "Manager Rohit", title: "Middle Management, Gurgaon", stars: 4, text: "Used the purple one in a client deck. Client signed. My boss took credit. The highlighter knows the truth. 4 stars because it cannot testify." }
+    ]
+  },
+  {
+    id: 5, name: "Impact Mints Tins (Pre-Eaten)", tagline: "Eating them might have given you sugar. So we ate them for you.",
+    story: "Six collectible Impact Mints tins: black, purple, silver, blue, red and one in full cricket colours. Every single mint inside has already been eaten, on your behalf, by our founder, as an act of selfless public service. You get the tins, the click of the lid, and the fresh-breath confidence of a mint without any of the mint. That is not an empty product. That is wellness.",
+    img: "./product-impact-mints.jpg", mrp: 19999, price: 9999, category: "Pre-Eaten",
+    sustainability: "Rejection Reason: Mints consumed during the founder's exit interview",
+    specs: { Tins: "6, assorted, collector grade", "Mints Remaining": "0 (we did the hard part)", "Sugar Consumed On Your Behalf": "All of it", Click: "Satisfying, fully functional", Breath: "Ours is fresh. Yours is your problem." },
+    reviews: [
+      { name: "Dietician Dr. Meera", title: "Clinical Nutritionist", stars: 5, text: "Zero calories, zero sugar, zero mints. This is the healthiest product I have ever recommended. I now carry the red one to dates and just open it menacingly." },
+      { name: "Collector Arjun", title: "Owns 400 Tins", stars: 5, text: "The cricket-themed tin alone is worth the price. The fact that someone ate the mints first adds provenance. I have authenticated the bite marks. They are real." }
     ]
   },
   {
@@ -65,19 +76,8 @@ const PRODUCTS = [
     ]
   },
   {
-    id: 5, name: "Bookmark, Slightly Torn", tagline: "Rescued from their dustbin. Literally.",
-    story: "A handmade paper bookmark with a hand-pressed flower, torn 2cm from the top during what witnesses describe as 'aggressive quality checking'. It was in the dustbin for 40 minutes before our founder — who was in the building collecting his belongings — rescued it. It marked the page of his old employment contract for 6 months. Now it can mark yours.",
-    img: IMGS.CARDBOARD, mrp: 199, price: 99, category: "Dustbin Rescue",
-    sustainability: "Rejection Reason: 2cm tear (the flower is fine, thanks for asking)",
-    specs: { Material: "Handmade paper + pressed flower", Tear: "2cm, characterful", "Time In Dustbin": "40 minutes", Provenance: "Founder's own hands" },
-    reviews: [
-      { name: "Book Lover Bhavna", title: "Reads 60 Books a Year", stars: 5, text: "The tear points at whatever line I stopped on, like an arrow of judgment. My reading comprehension has improved out of fear." },
-      { name: "Archivist Anand", title: "Preservation Enthusiast", stars: 4, text: "Historically significant. The tear is dated to the exact week of the founder's expulsion. This is a relic. I have insured it." }
-    ]
-  },
-  {
     id: 6, name: "Diary Bound Upside Down", tagline: "For thoughts that were already going downhill.",
-    story: "A production run of 200 diaries where the cover was bound upside down relative to the pages. EKATRA pulped 199 of them. One escaped in a tote bag (see product #1, the handles made it easy to snatch). To use it, you either flip the diary or flip your worldview. We recommend the second option. It's also non-returnable either way.",
+    story: "A production run of 200 diaries where the cover was bound upside down relative to the pages. EKATRA pulped 199 of them. One escaped in the founder's bag on his last day. To use it, you either flip the diary or flip your worldview. We recommend the second option. It's also non-returnable either way.",
     img: IMGS.TOTE_DETAIL, mrp: 699, price: 449, category: "Sole Survivor",
     sustainability: "Rejection Reason: Upside down (199 siblings were pulped — pour one out)",
     specs: { Orientation: "Incorrect (or is it)", Edition: "1 of 1 (survivor)", Pages: "Right way up, technically", Grief: "Included" },
