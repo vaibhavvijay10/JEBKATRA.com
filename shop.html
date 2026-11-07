@@ -120,7 +120,7 @@ tailwind.config = {
       <h1 class="font-headline text-5xl sm:text-7xl md:text-9xl font-black text-primary uppercase leading-[0.85] tracking-tighter">High-Priced<br/>Absurdities</h1>
       <p class="mt-4 font-body uppercase tracking-[0.3em] text-secondary text-sm">Volume 05: The Rejected Collection · 12 Objects</p>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8" id="shop-grid"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-12 gap-x-6" id="shop-grid"></div>
   </div>
 </section>
 
@@ -155,22 +155,22 @@ tailwind.config = {
       <div class="group relative ${offset}">
         <a href="product.html?id=${p.id}" class="block aspect-[4/5] bg-surface-container-highest overflow-hidden relative">
           <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"/>
-          <div class="absolute top-6 left-6 bg-primary text-white px-4 py-2 font-black uppercase tracking-widest text-xs">
+          <div class="absolute top-4 left-4 bg-primary text-white px-3 py-1.5 font-black uppercase tracking-widest text-[10px]">
             ${p.category}
           </div>
-          <div class="absolute top-6 right-6 bg-white/90 px-3 py-1">
-            <span class="font-headline text-lg font-black text-primary italic tracking-tighter">${formatPrice(p.price)}</span>
+          <div class="absolute top-4 right-4 bg-white/90 px-2.5 py-1">
+            <span class="font-headline text-base font-black text-primary italic tracking-tighter">${formatPrice(p.price)}</span>
           </div>
         </a>
-        <div class="mt-8 flex justify-between items-start">
+        <div class="mt-5 flex justify-between items-start">
           <div>
-            <h2 class="font-headline text-2xl font-black uppercase text-inverse-surface group-hover:text-primary transition-colors tracking-tighter leading-none">${p.name}</h2>
-            <p class="mt-2 font-body text-xs uppercase tracking-widest text-secondary">${p.tagline}</p>
+            <h2 class="font-headline text-xl font-black uppercase text-inverse-surface group-hover:text-primary transition-colors tracking-tighter leading-none">${p.name}</h2>
+            <p class="mt-2 font-body text-[11px] uppercase tracking-widest text-secondary">${p.tagline}</p>
           </div>
-          <span class="font-label text-xs text-primary font-bold ml-4">${d}% off</span>
+          <span class="font-label text-xs text-primary font-bold ml-4 whitespace-nowrap">${d}% off</span>
         </div>
-        <div class="mt-6">
-          <button onclick="addToCart(${p.id})" class="w-full py-4 bg-inverse-surface text-white font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-primary">Add to Bag</button>
+        <div class="mt-4">
+          <button onclick="addToCart(${p.id})" class="w-full py-3 bg-inverse-surface text-white font-black uppercase tracking-[0.2em] text-xs transition-all hover:bg-primary">Add to Bag</button>
         </div>
       </div>`;
   }).join('');
